@@ -15,7 +15,12 @@ import { ConferenceComponent } from './components/conference/conference.componen
     SharedModule,
     IndividualModule
   ],exports:[
-    HomeComponent
+    HomeComponent,
+    AboutComponent,
+    ConferenceComponent,
+    EventsComponent,
+    HomeComponent,
+    RegistrationComponent
   ]
 })
 export class PagesModule { }
