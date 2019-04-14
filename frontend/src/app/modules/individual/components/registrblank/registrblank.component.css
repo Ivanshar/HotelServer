@@ -1,0 +1,26 @@
+.input-group{
+  padding-bottom: 20px;
+}
+
+table.border{
+  padding: 50px;
+  border-radius: 100px;
+}
+
+.image-head-wrapper{
+  background-size: cover;
+  height: 556px;
+  width: 446px;
+
+}
+
+.border{
+  margin: 20px;
+}
+.input-group-prepend{
+  padding-bottom: 20px;
+}
+
+.regblank{
+  padding: 20px;
+}

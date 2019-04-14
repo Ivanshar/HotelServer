@@ -14,9 +14,10 @@ import { EventcardsComponent } from './components/eventcards/eventcards.componen
 import { ConferencecardComponent } from './components/conferencecard/conferencecard.component';
 import { ReviewblankComponent } from './components/reviewblank/reviewblank.component';
 import { ReviewcardComponent } from './components/reviewcard/reviewcard.component';
+import { RegistrblankComponent } from './components/registrblank/registrblank.component';
 
 @NgModule({
-  declarations: [FooterComponent, CarouselComponent, ServiceComponent, GalleryComponent, ResortComponent, BlogComponent, AboutinfoComponent, RoomcardsComponent, EventcardsComponent, ConferencecardComponent, ReviewblankComponent, ReviewcardComponent],
+  declarations: [FooterComponent, CarouselComponent, ServiceComponent, GalleryComponent, ResortComponent, BlogComponent, AboutinfoComponent, RoomcardsComponent, EventcardsComponent, ConferencecardComponent, ReviewblankComponent, ReviewcardComponent, RegistrblankComponent],
   imports: [
     CommonModule,
     RouterModule
@@ -32,7 +33,8 @@ import { ReviewcardComponent } from './components/reviewcard/reviewcard.componen
     AboutinfoComponent,
     ConferencecardComponent,
     ReviewblankComponent,
-    ReviewcardComponent
+    ReviewcardComponent,
+    RegistrblankComponent
   ]
 })
 export class IndividualModule { }

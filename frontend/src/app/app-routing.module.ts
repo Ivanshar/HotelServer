@@ -20,7 +20,7 @@ const routes: Routes = [
   {path:'rooms', component:RoomsComponent},
   {path:'events', component:EventsComponent},
   {path:'conference', component:ConferenceComponent},
-  {path:'reviews', component:ReviewComponent},
+  {path:'review', component:ReviewComponent},
   {path:'registration', component:RegistrationComponent},
   {path:'profile', component:ProfileComponent},
   {path:'roombook', component:RoombookComponent},
