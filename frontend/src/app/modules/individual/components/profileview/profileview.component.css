@@ -1,0 +1,32 @@
+.input-group{
+  padding-bottom: 20px;
+}
+
+.image-head-wrapper{
+  background-size: cover;
+  right: 30px;
+  /*height: 556px;*/
+  /*width: 446px;*/
+}
+
+.input-group-prepend{
+  padding-bottom: 20px;
+}
+
+
+h3.regblank{
+  font-size: 20px;
+  color: #a9a0a4;
+}
+
+
+h2.regblank{
+  font-size: 25px;
+  color: #162541;
+}
+
+.edit-position{
+
+  bottom: 10px;
+  right: 10px;
+}

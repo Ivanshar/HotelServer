@@ -15,9 +15,15 @@ import { ConferencecardComponent } from './components/conferencecard/conferencec
 import { ReviewblankComponent } from './components/reviewblank/reviewblank.component';
 import { ReviewcardComponent } from './components/reviewcard/reviewcard.component';
 import { RegistrblankComponent } from './components/registrblank/registrblank.component';
+import { ProfileviewComponent } from './components/profileview/profileview.component';
+import { BooklistComponent } from './components/booklist/booklist.component';
+import { ReductprofviewComponent } from './components/reductprofview/reductprofview.component';
+import {ReductprofComponent} from "../pages/components/reductprof/reductprof.component";
+import { FastbookviewComponent } from './components/fastbookview/fastbookview.component';
+import { PaymantcardComponent } from './components/paymantcard/paymantcard.component';
 
 @NgModule({
-  declarations: [FooterComponent, CarouselComponent, ServiceComponent, GalleryComponent, ResortComponent, BlogComponent, AboutinfoComponent, RoomcardsComponent, EventcardsComponent, ConferencecardComponent, ReviewblankComponent, ReviewcardComponent, RegistrblankComponent],
+  declarations: [FooterComponent, CarouselComponent, ServiceComponent, GalleryComponent, ResortComponent, BlogComponent, AboutinfoComponent, RoomcardsComponent, EventcardsComponent, ConferencecardComponent, ReviewblankComponent, ReviewcardComponent, RegistrblankComponent, ProfileviewComponent, BooklistComponent, ReductprofviewComponent, FastbookviewComponent, PaymantcardComponent],
   imports: [
     CommonModule,
     RouterModule
@@ -34,7 +40,12 @@ import { RegistrblankComponent } from './components/registrblank/registrblank.co
     ConferencecardComponent,
     ReviewblankComponent,
     ReviewcardComponent,
-    RegistrblankComponent
+    RegistrblankComponent,
+    ProfileviewComponent,
+    BooklistComponent,
+    ReductprofviewComponent,
+    FastbookviewComponent,
+    PaymantcardComponent
   ]
 })
 export class IndividualModule { }

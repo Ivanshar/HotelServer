@@ -13,6 +13,7 @@ import {RoombookComponent} from "./modules/pages/components/booking/roombook/roo
 import {EventbookComponent} from "./modules/pages/components/booking/eventbook/eventbook.component";
 import {UsersComponent} from "./modules/pages/components/users/users.component";
 import {SignComponent} from "./modules/pages/components/modal/sign/sign.component";
+import {ReductprofComponent} from "./modules/pages/components/reductprof/reductprof.component";
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -27,7 +28,8 @@ const routes: Routes = [
   {path:'eventbook', component:EventbookComponent},
   {path:'confbook', component:ConfbookComponent},
   {path:'users', component:UsersComponent},
-  {path:'sign', component:SignComponent}
+  {path:'sign', component:SignComponent},
+  {path:'reductprof', component:ReductprofComponent}
 ];
 
 @NgModule({
