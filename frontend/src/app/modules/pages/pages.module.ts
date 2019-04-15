@@ -16,11 +16,12 @@ import { ConfbookComponent } from './components/booking/confbook/confbook.compon
 import { UsersComponent } from './components/users/users.component';
 import {RouterModule} from "@angular/router";
 import { SignComponent } from './components/modal/sign/sign.component';
+import { ReductprofComponent } from './components/reductprof/reductprof.component';
 
 @NgModule({
   declarations: [HomeComponent, AboutComponent, EventsComponent, RegistrationComponent,
     ConferenceComponent, RoomsComponent, ReviewComponent, ProfileComponent, RoombookComponent,
-    EventbookComponent, ConfbookComponent, UsersComponent, SignComponent],
+    EventbookComponent, ConfbookComponent, UsersComponent, SignComponent, ReductprofComponent],
   imports: [
     CommonModule,
     SharedModule,
@@ -39,7 +40,8 @@ import { SignComponent } from './components/modal/sign/sign.component';
     EventbookComponent,
     ConfbookComponent,
     UsersComponent,
-    SignComponent
+    SignComponent,
+    ReductprofComponent
       ]
 })
 export class PagesModule { }
