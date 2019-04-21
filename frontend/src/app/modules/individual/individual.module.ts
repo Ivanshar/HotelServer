@@ -21,9 +21,11 @@ import { ReductprofviewComponent } from './components/reductprofview/reductprofv
 import {ReductprofComponent} from "../pages/components/reductprof/reductprof.component";
 import { FastbookviewComponent } from './components/fastbookview/fastbookview.component';
 import { PaymantcardComponent } from './components/paymantcard/paymantcard.component';
+import { ConfcardsComponent } from './components/confcards/confcards.component';
+import { BookroomcontentComponent } from './components/bookroomcontent/bookroomcontent.component';
 
 @NgModule({
-  declarations: [FooterComponent, CarouselComponent, ServiceComponent, GalleryComponent, ResortComponent, BlogComponent, AboutinfoComponent, RoomcardsComponent, EventcardsComponent, ConferencecardComponent, ReviewblankComponent, ReviewcardComponent, RegistrblankComponent, ProfileviewComponent, BooklistComponent, ReductprofviewComponent, FastbookviewComponent, PaymantcardComponent],
+  declarations: [FooterComponent, CarouselComponent, ServiceComponent, GalleryComponent, ResortComponent, BlogComponent, AboutinfoComponent, RoomcardsComponent, EventcardsComponent, ConferencecardComponent, ReviewblankComponent, ReviewcardComponent, RegistrblankComponent, ProfileviewComponent, BooklistComponent, ReductprofviewComponent, FastbookviewComponent, PaymantcardComponent, ConfcardsComponent, BookroomcontentComponent],
   imports: [
     CommonModule,
     RouterModule
@@ -45,7 +47,8 @@ import { PaymantcardComponent } from './components/paymantcard/paymantcard.compo
     BooklistComponent,
     ReductprofviewComponent,
     FastbookviewComponent,
-    PaymantcardComponent
+    PaymantcardComponent,
+    BookroomcontentComponent
   ]
 })
 export class IndividualModule { }

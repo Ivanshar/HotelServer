@@ -1,0 +1,89 @@
+<!-- Include Date Range Picker -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+<!-- Include Required Prerequisites -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+
+
+<section class="contact-block">
+  <div class="container">
+    <div class="list-group full-width-div  col-10 table-responsive">
+
+      <div class="userinfo col-sm">
+        <form action="" method="post" name="registration" class="regblank">
+          <h1 style="color: #ff4157; font-size: 40px">Nname of apart</h1>
+          <h3 class="regblank">Name surname</h3>
+        </form>
+      </div>
+      <table>
+        <tr>
+          <td>
+            <label for="start">Start date:</label>
+
+            <input type="date" id="start" name="trip-start"
+                   value="2018-07-22"
+                   min="2018-01-01" max="2018-12-31">
+                  <br>
+            <div class="btn-group">
+              <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Adult
+              </button>
+              <div class="dropdown-menu">
+                <p class="dropdown-item" href="#">0</p>
+                <p class="dropdown-item" href="#">1</p>
+                <p class="dropdown-item" href="#">2</p>
+                <p class="dropdown-item" href="#">3</p>
+                <p class="dropdown-item" href="#">5</p>
+                <p class="dropdown-item" href="#">6</p>
+                <p class="dropdown-item" href="#">7</p>
+              </div>
+            </div>
+          </td>
+          <td>
+            <label for="finish">Finish date:</label>
+            <input type="date" id="finish" name="trip-start"
+                   value="2018-07-22"
+                   min="2018-01-01" max="2018-12-31">
+        <br>
+            <div class="btn-group">
+              <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Child
+              </button>
+              <div class="dropdown-menu">
+                <p class="dropdown-item" href="#">0</p>
+                <p class="dropdown-item" href="#">1</p>
+                <p class="dropdown-item" href="#">2</p>
+                <p class="dropdown-item" href="#">3</p>
+                <p class="dropdown-item" href="#">5</p>
+                <p class="dropdown-item" href="#">6</p>
+                <p class="dropdown-item" href="#">7</p>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <div class="custom-control custom-radio">
+        <input type="radio" class="custom-control-input" id="babyBad" name="defaultExampleRadios">
+        <label class="custom-control-label" for="babyBad">Baby bad</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" class="custom-control-input" id="fridge" name="defaultExampleRadios">
+        <label class="custom-control-label" for="fridge">Fridge</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" class="custom-control-input" id="tv" name="defaultExampleRadios">
+        <label class="custom-control-label" for="tv">TV</label>
+      </div>
+
+
+
+
+
+
+
+    </div>
+  </div>
+</section>
