@@ -17,11 +17,18 @@ import { UsersComponent } from './components/users/users.component';
 import {RouterModule} from "@angular/router";
 import { SignComponent } from './components/modal/sign/sign.component';
 import { ReductprofComponent } from './components/reductprof/reductprof.component';
+import { AddroomComponent } from './components/admin/addroom/addroom.component';
+import { RoomlistComponent } from './components/admin/roomlist/roomlist.component';
+import { AddeventComponent } from './components/admin/addevent/addevent.component';
+import { EventlistComponent } from './components/admin/eventlist/eventlist.component';
+import { ConflistComponent } from './components/admin/conflist/conflist.component';
+import { AdminmenuComponent } from './components/admin/adminmenu/adminmenu.component';
 
 @NgModule({
   declarations: [HomeComponent, AboutComponent, EventsComponent, RegistrationComponent,
     ConferenceComponent, RoomsComponent, ReviewComponent, ProfileComponent, RoombookComponent,
-    EventbookComponent, ConfbookComponent, UsersComponent, SignComponent, ReductprofComponent],
+    EventbookComponent, ConfbookComponent, UsersComponent, SignComponent, ReductprofComponent,
+    AddroomComponent, RoomlistComponent, AddeventComponent, EventlistComponent, ConflistComponent, AdminmenuComponent],
   imports: [
     CommonModule,
     SharedModule,
@@ -41,7 +48,8 @@ import { ReductprofComponent } from './components/reductprof/reductprof.componen
     ConfbookComponent,
     UsersComponent,
     SignComponent,
-    ReductprofComponent
+    ReductprofComponent,
+    AddroomComponent, RoomlistComponent, AddeventComponent, EventlistComponent, ConflistComponent, AdminmenuComponent
       ]
 })
 export class PagesModule { }

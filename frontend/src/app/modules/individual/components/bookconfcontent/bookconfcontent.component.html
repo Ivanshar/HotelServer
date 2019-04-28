@@ -1,0 +1,58 @@
+<!-- Include Required Prerequisites -->
+
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+
+
+<section class="contact-block">
+  <div class="container">
+    <div class="list-group full-width-div  col-10 table-responsive">
+
+      <div class="userinfo col-sm">
+        <form action="" method="post" name="registration" class="regblank">
+          <h1 style="color: #ff4157; font-size: 40px">Name of conference hall</h1>
+          <h3 class="regblank">Name surname</h3>
+        </form>
+      </div>
+      <table>
+        <tr>
+          <td>
+            <label class="start-finish" for="start">Start date and time:</label>
+            <input  class="form-control" type="datetime-local" id="start" name="trip-start" value="date"
+                    min="2019-01-01" max="2019-12-31">
+            <br>
+          </td>
+          <td>
+            <label  class="start-finish" for="finish">Finish date and time:</label>
+            <input class="form-control" type="datetime-local" id="finish" name="trip-start"
+                   value="2020-07-22"
+                   min="2018-01-01" max="2018-12-31">
+            <br>
+          </td>
+        </tr>
+      </table>
+
+      <label for="child">Format of event</label>
+      <select id="child" class="form-control form-control-lg col-2" value="0">
+        <option>Meet up</option>
+        <option>Conference</option>
+        <option>Wedding</option>
+        <option>Summit</option>
+        <option>Sport Event</option>
+      </select>
+
+      <div class="form-group">
+        <label for="inputNumPeople">Number of people</label>
+        <input type="number" class="form-control col-2" id="inputNumPeople" placeholder="1">
+      </div>
+
+      <form action="" method="post" name="registration" class="regblank">
+        <h1 style="color: #ff4157; padding: 20px 0px 20px;font-size: 40px">Prise: 999 $</h1>
+      </form>
+
+      <div class="text-center mx-auto">
+        <button type="submit" class=" btn btn-block btn-danger btn-lg">Register</button>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -23,9 +23,19 @@ import { FastbookviewComponent } from './components/fastbookview/fastbookview.co
 import { PaymantcardComponent } from './components/paymantcard/paymantcard.component';
 import { ConfcardsComponent } from './components/confcards/confcards.component';
 import { BookroomcontentComponent } from './components/bookroomcontent/bookroomcontent.component';
+import { BookeventcontentComponent } from './components/bookeventcontent/bookeventcontent.component';
+import { BookconfcontentComponent } from './components/bookconfcontent/bookconfcontent.component';
+import { AddroomblankComponent } from './components/admin/addroomblank/addroomblank.component';
+import { AddeventblankComponent } from './components/admin/addeventblank/addeventblank.component';
 
 @NgModule({
-  declarations: [FooterComponent, CarouselComponent, ServiceComponent, GalleryComponent, ResortComponent, BlogComponent, AboutinfoComponent, RoomcardsComponent, EventcardsComponent, ConferencecardComponent, ReviewblankComponent, ReviewcardComponent, RegistrblankComponent, ProfileviewComponent, BooklistComponent, ReductprofviewComponent, FastbookviewComponent, PaymantcardComponent, ConfcardsComponent, BookroomcontentComponent],
+  declarations: [FooterComponent, CarouselComponent, ServiceComponent, GalleryComponent, ResortComponent, BlogComponent,
+    AboutinfoComponent, RoomcardsComponent, EventcardsComponent, ConferencecardComponent, ReviewblankComponent,
+    ReviewcardComponent, RegistrblankComponent, ProfileviewComponent, BooklistComponent, ReductprofviewComponent,
+    FastbookviewComponent, PaymantcardComponent, BookroomcontentComponent, BookeventcontentComponent,
+    BookconfcontentComponent,
+    AddroomblankComponent,
+    AddeventblankComponent],
   imports: [
     CommonModule,
     RouterModule
@@ -48,7 +58,11 @@ import { BookroomcontentComponent } from './components/bookroomcontent/bookroomc
     ReductprofviewComponent,
     FastbookviewComponent,
     PaymantcardComponent,
-    BookroomcontentComponent
+    BookroomcontentComponent,
+    BookeventcontentComponent,
+    BookconfcontentComponent,
+    AddroomblankComponent,
+    AddeventblankComponent
   ]
 })
 export class IndividualModule { }

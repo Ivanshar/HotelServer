@@ -14,6 +14,12 @@ import {EventbookComponent} from "./modules/pages/components/booking/eventbook/e
 import {UsersComponent} from "./modules/pages/components/users/users.component";
 import {SignComponent} from "./modules/pages/components/modal/sign/sign.component";
 import {ReductprofComponent} from "./modules/pages/components/reductprof/reductprof.component";
+import {AdminmenuComponent} from "./modules/pages/components/admin/adminmenu/adminmenu.component";
+import {AddroomComponent} from "./modules/pages/components/admin/addroom/addroom.component";
+import {AddeventComponent} from "./modules/pages/components/admin/addevent/addevent.component";
+import {ConflistComponent} from "./modules/pages/components/admin/conflist/conflist.component";
+import {EventlistComponent} from "./modules/pages/components/admin/eventlist/eventlist.component";
+import {RoomlistComponent} from "./modules/pages/components/admin/roomlist/roomlist.component";
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -29,7 +35,13 @@ const routes: Routes = [
   {path:'confbook', component:ConfbookComponent},
   {path:'users', component:UsersComponent},
   {path:'sign', component:SignComponent},
-  {path:'reductprof', component:ReductprofComponent}
+  {path:'reductprof', component:ReductprofComponent},
+  {path:'adminmenu', component:AdminmenuComponent},
+  {path:'addroom', component:AddroomComponent},
+  {path:'addevent', component:AddeventComponent},
+  {path:'conflist', component:ConflistComponent},
+  {path:'eventlist', component:EventlistComponent},
+  {path:'roomlist', component:RoomlistComponent}
 ];
 
 @NgModule({
