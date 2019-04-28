@@ -8,6 +8,7 @@ import java.util.Objects;
 public class RoomEntity {
     private int id;
     private int price;
+    private String roomType;
     private int maxPersons;
     private byte isActive;
     private byte hasBabyBed;
@@ -33,6 +34,16 @@ public class RoomEntity {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    @Basic
+    @Column(name = "room_type")
+    public String getRoomType() {
+        return roomType;
+    }
+
+    public void setRoomType(String roomType) {
+        this.roomType = roomType;
     }
 
     @Basic
@@ -107,11 +118,12 @@ public class RoomEntity {
                 hasBabyBed == that.hasBabyBed &&
                 hasTv == that.hasTv &&
                 hasBath == that.hasBath &&
-                hasFridge == that.hasFridge;
+                hasFridge == that.hasFridge &&
+                Objects.equals(roomType, that.roomType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, price, maxPersons, isActive, hasBabyBed, hasTv, hasBath, hasFridge);
+        return Objects.hash(id, price, roomType, maxPersons, isActive, hasBabyBed, hasTv, hasBath, hasFridge);
     }
 }

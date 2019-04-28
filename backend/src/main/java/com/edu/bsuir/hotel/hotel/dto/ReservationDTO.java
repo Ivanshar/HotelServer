@@ -10,7 +10,7 @@ public class ReservationDTO {
     private Date dateTo;
     private int personCount;
     private UserDTO user;
-    private RoomEntity roomByRoomId;
+    private RoomEntity room;
 
     public ReservationDTO() {
     }
@@ -21,7 +21,7 @@ public class ReservationDTO {
         this.dateTo = dateTo;
         this.personCount = personCount;
         this.user = user;
-        this.roomByRoomId = roomByRoomId;
+        this.room = roomByRoomId;
     }
 
     public int getId() {
@@ -64,11 +64,11 @@ public class ReservationDTO {
         this.user = user;
     }
 
-    public RoomEntity getRoomByRoomId() {
-        return roomByRoomId;
+    public RoomEntity getRoom() {
+        return room;
     }
 
-    public void setRoomByRoomId(RoomEntity roomByRoomId) {
-        this.roomByRoomId = roomByRoomId;
+    public void setRoom(RoomEntity roomByRoomId) {
+        this.room = roomByRoomId;
     }
 }
