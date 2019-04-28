@@ -1,0 +1,59 @@
+<section class="contact-block">
+  <div class="container">
+    <div class="row border border-danger col-10">
+      <div class="col-sm">
+        <section class="image-head-wrapper"
+                 style="background-image: url('../../../../../../assets/images/addevent.jpg');">
+          <!--<div class="inner-wrapper">-->
+            <!--<h1>Add EVENT</h1>-->
+          <!--</div>-->
+        </section>
+      </div>
+      <div class="col-sm">
+        <form action="" method="post" name="registration" class="regblank">
+          <label for="child">Type of event</label>
+          <select id="child" class="form-control form-control-lg col-6" >
+            <option>Sport event</option>
+            <option>Education</option>
+            <option>Religious</option>
+            <option>Political</option>
+            <option>Business</option>
+          </select>
+          <div class="form-group">
+            <label for="inputNumPeople">Max number of people</label>
+            <input type="number" class="form-control col-2" id="inputNumPeople" placeholder="1" min="0" max="1000">
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description" placeholder="1" >
+          </div>
+          <table>
+            <tr>
+              <td>
+                <label class="start-finish" for="start">Start date and time:</label>
+                <input  class="form-control" type="datetime-local" id="start" name="trip-start" value="date"
+                        min="2019-01-01" max="2019-12-31">
+                <br>
+              </td>
+              <td>
+                <label  class="start-finish" for="finish">Finish date and time:</label>
+                <input class="form-control" type="datetime-local" id="finish" name="trip-start"
+                       value="2020-07-22"
+                       min="2018-01-01" max="2018-12-31">
+                <br>
+              </td>
+            </tr>
+          </table>
+                    <div class="form-group input-price">
+            <label for="inputPriceOfEvent">Price:  &nbsp; </label>
+            <input type="number" class="form-control col-2" id="inputPriceOfEvent" placeholder="1" min="0" max="1000">
+            <h3>&nbsp; $</h3>
+          </div>
+          <div class="text-center mx-auto" style="padding: 20px">
+            <button type="submit" class=" btn btn-block mybtn btn-danger tx-tfm">Commit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
