@@ -12,7 +12,7 @@ public class ReservationEntity {
     private Date dateTo;
     private int personCount;
     private UserEntity user;
-    private RoomEntity roomByRoomId;
+    private RoomEntity room;
 
     @Id
     @Column(name = "id")
@@ -76,17 +76,17 @@ public class ReservationEntity {
         return user;
     }
 
-    public void setUser(UserEntity userByUserId) {
-        this.user = userByUserId;
+    public void setUser(UserEntity user) {
+        this.user = user;
     }
 
     @ManyToOne
     @JoinColumn(name = "room_id", referencedColumnName = "id", nullable = false)
-    public RoomEntity getRoomByRoomId() {
-        return roomByRoomId;
+    public RoomEntity getRoom() {
+        return room;
     }
 
-    public void setRoomByRoomId(RoomEntity roomByRoomId) {
-        this.roomByRoomId = roomByRoomId;
+    public void setRoom(RoomEntity room) {
+        this.room = room;
     }
 }

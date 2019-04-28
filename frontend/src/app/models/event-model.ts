@@ -1,7 +1,6 @@
-import {EventtypeModel} from "./eventtype-model";
-
 export class EventModel {
   id: string;
+  eventType: string;
   name: string;
   description: string;
   dateTimeStart: Date;
@@ -9,7 +8,6 @@ export class EventModel {
   price: number;
   maxPersons: number;
   logoUrl: string;
-  eventType: EventtypeModel;
 
   static cloneBase(event: EventModel): EventModel{
     const eventClone: EventModel = new EventModel();

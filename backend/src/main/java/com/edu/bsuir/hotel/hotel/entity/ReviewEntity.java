@@ -62,7 +62,7 @@ public class ReviewEntity {
         return reservation;
     }
 
-    public void setReservation(ReservationEntity reservationByReservationId) {
-        this.reservation = reservationByReservationId;
+    public void setReservation(ReservationEntity reservation) {
+        this.reservation = reservation;
     }
 }

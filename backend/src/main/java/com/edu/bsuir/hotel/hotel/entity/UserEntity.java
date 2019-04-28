@@ -8,6 +8,7 @@ import java.util.Objects;
 @Table(name = "user", schema = "hoteldb", catalog = "")
 public class UserEntity {
     private int id;
+    private byte role;
     private String email;
     private String login;
     private String password;
@@ -16,7 +17,6 @@ public class UserEntity {
     private String mobileNumber;
     private String logoUrl;
     private Date birthDate;
-    private RoleEntity role;
 
     @Id
     @Column(name = "id")
@@ -26,6 +26,16 @@ public class UserEntity {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Basic
+    @Column(name = "role")
+    public byte getRole() {
+        return role;
+    }
+
+    public void setRole(byte role) {
+        this.role = role;
     }
 
     @Basic
@@ -114,6 +124,7 @@ public class UserEntity {
         if (o == null || getClass() != o.getClass()) return false;
         UserEntity that = (UserEntity) o;
         return id == that.id &&
+                role == that.role &&
                 Objects.equals(email, that.email) &&
                 Objects.equals(login, that.login) &&
                 Objects.equals(password, that.password) &&
@@ -126,16 +137,6 @@ public class UserEntity {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, email, login, password, firstName, lastName, mobileNumber, logoUrl, birthDate);
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "role_id", referencedColumnName = "id", nullable = false)
-    public RoleEntity getRole() {
-        return role;
-    }
-
-    public void setRole(RoleEntity roleByRoleId) {
-        this.role = roleByRoleId;
+        return Objects.hash(id, role, email, login, password, firstName, lastName, mobileNumber, logoUrl, birthDate);
     }
 }

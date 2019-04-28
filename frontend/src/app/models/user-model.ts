@@ -1,5 +1,3 @@
-import {RoleModel} from "./role-model";
-
 export class UserModel {
   id: string;
   email: string;
@@ -10,7 +8,7 @@ export class UserModel {
   mobileNumber: string;
   logoUrl: string;
   birthDate: Date;
-  role: RoleModel;
+  role: boolean;
 
   static cloneBase(user: UserModel):UserModel{
     const cloneUserModel: UserModel = new UserModel();

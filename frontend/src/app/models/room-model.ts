@@ -1,6 +1,7 @@
 export class RoomModel {
   id: string;
   price: string;
+  roomType: string;
   maxPersons: string;
   isActive: boolean;
   hasBabyBed: boolean;
@@ -17,6 +18,7 @@ export class RoomModel {
     cloneRoom.hasBabyBed = room.isActive;
     cloneRoom.hasTv = room.hasTv;
     cloneRoom.hasBath = room.hasBath;
+    cloneRoom.roomType = room.roomType;
     cloneRoom.hasFridge = room.hasFridge;
     return cloneRoom;
   }

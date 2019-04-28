@@ -1,7 +1,5 @@
 package com.edu.bsuir.hotel.hotel.dto;
 
-import com.edu.bsuir.hotel.hotel.entity.RoleEntity;
-
 import java.sql.Date;
 
 public class UserDTO {
@@ -12,12 +10,12 @@ public class UserDTO {
     private String mobileNumber;
     private String logoUrl;
     private Date birthDate;
-    private RoleEntity role;
+    private byte role;
 
     public UserDTO() {
     }
 
-    public UserDTO(int id, String email, String firstName, String lastName, String mobileNumber, String logoUrl, Date birthDate, RoleEntity role) {
+    public UserDTO(int id, String email, String firstName, String lastName, String mobileNumber, String logoUrl, Date birthDate, byte role) {
         this.id = id;
         this.email = email;
         this.firstName = firstName;
@@ -84,11 +82,11 @@ public class UserDTO {
         this.birthDate = birthDate;
     }
 
-    public RoleEntity getRole() {
+    public byte getRole() {
         return role;
     }
 
-    public void setRole(RoleEntity role) {
+    public void setRole(byte role) {
         this.role = role;
     }
 }

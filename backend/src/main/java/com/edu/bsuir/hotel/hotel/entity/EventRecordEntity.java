@@ -64,8 +64,8 @@ public class EventRecordEntity {
         return user;
     }
 
-    public void setUser(UserEntity userByUserId) {
-        this.user = userByUserId;
+    public void setUser(UserEntity user) {
+        this.user = user;
     }
 
     @ManyToOne
@@ -74,7 +74,7 @@ public class EventRecordEntity {
         return event;
     }
 
-    public void setEvent(EventEntity eventByEventId) {
-        this.event = eventByEventId;
+    public void setEvent(EventEntity event) {
+        this.event = event;
     }
 }

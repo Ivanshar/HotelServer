@@ -8,6 +8,7 @@ import java.util.Objects;
 @Table(name = "event", schema = "hoteldb", catalog = "")
 public class EventEntity {
     private int id;
+    private String eventType;
     private String name;
     private String description;
     private Timestamp dateTimeStart;
@@ -15,7 +16,6 @@ public class EventEntity {
     private int price;
     private int maxPersons;
     private String logoUrl;
-    private EventTypeEntity eventType;
 
     @Id
     @Column(name = "id")
@@ -25,6 +25,16 @@ public class EventEntity {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Basic
+    @Column(name = "event_type")
+    public String getEventType() {
+        return eventType;
+    }
+
+    public void setEventType(String eventType) {
+        this.eventType = eventType;
     }
 
     @Basic
@@ -105,6 +115,7 @@ public class EventEntity {
         return id == that.id &&
                 price == that.price &&
                 maxPersons == that.maxPersons &&
+                Objects.equals(eventType, that.eventType) &&
                 Objects.equals(name, that.name) &&
                 Objects.equals(description, that.description) &&
                 Objects.equals(dateTimeStart, that.dateTimeStart) &&
@@ -114,16 +125,6 @@ public class EventEntity {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, dateTimeStart, dateTimeEnd, price, maxPersons, logoUrl);
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "event_type_id", referencedColumnName = "id", nullable = false)
-    public EventTypeEntity getEventType() {
-        return eventType;
-    }
-
-    public void setEventType(EventTypeEntity eventTypeByEventTypeId) {
-        this.eventType = eventTypeByEventTypeId;
+        return Objects.hash(id, eventType, name, description, dateTimeStart, dateTimeEnd, price, maxPersons, logoUrl);
     }
 }
