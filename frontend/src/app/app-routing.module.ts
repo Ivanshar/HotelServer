@@ -20,6 +20,8 @@ import {AddeventComponent} from "./modules/pages/components/admin/addevent/addev
 import {ConflistComponent} from "./modules/pages/components/admin/conflist/conflist.component";
 import {EventlistComponent} from "./modules/pages/components/admin/eventlist/eventlist.component";
 import {RoomlistComponent} from "./modules/pages/components/admin/roomlist/roomlist.component";
+import {UserlistComponent} from "./modules/pages/components/admin/userlist/userlist.component";
+import {AddadminComponent} from "./modules/pages/components/admin/addadmin/addadmin.component";
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -41,7 +43,9 @@ const routes: Routes = [
   {path:'addevent', component:AddeventComponent},
   {path:'conflist', component:ConflistComponent},
   {path:'eventlist', component:EventlistComponent},
-  {path:'roomlist', component:RoomlistComponent}
+  {path:'roomlist', component:RoomlistComponent},
+  {path:'userlist', component:UserlistComponent},
+  {path:'addadmin', component:AddadminComponent}
 ];
 
 @NgModule({

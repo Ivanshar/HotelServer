@@ -23,12 +23,15 @@ import { AddeventComponent } from './components/admin/addevent/addevent.componen
 import { EventlistComponent } from './components/admin/eventlist/eventlist.component';
 import { ConflistComponent } from './components/admin/conflist/conflist.component';
 import { AdminmenuComponent } from './components/admin/adminmenu/adminmenu.component';
+import { AddadminComponent } from './components/admin/addadmin/addadmin.component';
+import { UserlistComponent } from './components/admin/userlist/userlist.component';
 
 @NgModule({
   declarations: [HomeComponent, AboutComponent, EventsComponent, RegistrationComponent,
     ConferenceComponent, RoomsComponent, ReviewComponent, ProfileComponent, RoombookComponent,
     EventbookComponent, ConfbookComponent, UsersComponent, SignComponent, ReductprofComponent,
-    AddroomComponent, RoomlistComponent, AddeventComponent, EventlistComponent, ConflistComponent, AdminmenuComponent],
+    AddroomComponent, RoomlistComponent, AddeventComponent, EventlistComponent, ConflistComponent,
+    AdminmenuComponent, AddadminComponent, UserlistComponent],
   imports: [
     CommonModule,
     SharedModule,
@@ -49,7 +52,8 @@ import { AdminmenuComponent } from './components/admin/adminmenu/adminmenu.compo
     UsersComponent,
     SignComponent,
     ReductprofComponent,
-    AddroomComponent, RoomlistComponent, AddeventComponent, EventlistComponent, ConflistComponent, AdminmenuComponent
+    AddroomComponent, RoomlistComponent, AddeventComponent, EventlistComponent, ConflistComponent, AdminmenuComponent,
+    AddadminComponent, UserlistComponent
       ]
 })
 export class PagesModule { }
