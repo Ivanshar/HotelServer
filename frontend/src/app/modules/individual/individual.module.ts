@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/footer/footer.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
-import {HomeComponent} from "../pages/components/home/home.component";
 import { ServiceComponent } from './components/service/service.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { ResortComponent } from './components/resort/resort.component';
@@ -18,10 +17,8 @@ import { RegistrblankComponent } from './components/registrblank/registrblank.co
 import { ProfileviewComponent } from './components/profileview/profileview.component';
 import { BooklistComponent } from './components/booklist/booklist.component';
 import { ReductprofviewComponent } from './components/reductprofview/reductprofview.component';
-import {ReductprofComponent} from "../pages/components/reductprof/reductprof.component";
 import { FastbookviewComponent } from './components/fastbookview/fastbookview.component';
 import { PaymantcardComponent } from './components/paymantcard/paymantcard.component';
-import { ConfcardsComponent } from './components/confcards/confcards.component';
 import { BookroomcontentComponent } from './components/bookroomcontent/bookroomcontent.component';
 import { BookeventcontentComponent } from './components/bookeventcontent/bookeventcontent.component';
 import { BookconfcontentComponent } from './components/bookconfcontent/bookconfcontent.component';

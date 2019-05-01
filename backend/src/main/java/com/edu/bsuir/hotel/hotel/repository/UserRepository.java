@@ -3,6 +3,10 @@ package com.edu.bsuir.hotel.hotel.repository;
 import com.edu.bsuir.hotel.hotel.entity.UserEntity;
 import org.springframework.data.repository.CrudRepository;
 
-public interface UserRepository extends CrudRepository<UserEntity, Long> {
+import java.util.List;
+
+public interface UserRepository extends CrudRepository<UserEntity, Integer> {
     UserEntity findByLogin(String login);
+    UserEntity findByEmail(String email);
+    List<UserEntity> findAll();
 }

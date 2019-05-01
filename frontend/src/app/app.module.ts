@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import {PagesModule} from "./modules/pages/pages.module";
+import {IndividualModule} from "./modules/individual/individual.module";
 
 
 
@@ -16,7 +17,8 @@ import {PagesModule} from "./modules/pages/pages.module";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    PagesModule
+    PagesModule,
+    IndividualModule
   ],
   providers: [],
   bootstrap: [AppComponent]
