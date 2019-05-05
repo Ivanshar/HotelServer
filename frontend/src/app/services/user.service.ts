@@ -8,7 +8,11 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  getUserById(id: string):Observable<UserSafeModel>{
+  public getUserById(id: string):Observable<UserSafeModel>{
     return this.http.get<UserSafeModel>("/api/users/id/"+id);
+  }
+
+  public getAllUsers():Observable<UserSafeModel[]>{
+    return this.http.get<UserSafeModel[]>("/api/users/list");
   }
 }

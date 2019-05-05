@@ -4,25 +4,34 @@
   <div class="container">
     <div class="list-group full-width-div  col-12 table-responsive">
       <table class="table">
-        <tr><th>
-          <h2>First name</h2>
-          <h5>Antoha</h5>
-        </th>
+        <tr>
+          <th><h2>#</h2></th>
+          <th><h2>First name</h2></th>
+          <th><h2>Second Name</h2></th>
+          <th><h2>Email</h2></th>
+          <th><h2>Mobile number</h2></th>
+          <th><h2>Birth date</h2></th>
+        </tr>
+        <tr *ngFor="let user of users; let i = index">
           <th>
-            <h2>Last Name</h2>
-            <h5>Boolean</h5>
+            <h5>{{i+1}}</h5>
           </th>
           <th>
-            <h2>Login</h2>
-            <h5>lol@lol.g</h5>
-          </th><th>
-            <h2>Mobile number</h2>
-            <h5>+3752912458613</h5>
+            <h5>{{user.firstName}}</h5>
           </th>
           <th>
-            <h2>Birth date</h2>
-            <h5>25.02.2012</h5>
-          </th></tr>
+            <h5>{{user.lastName}}</h5>
+          </th>
+          <th>
+            <h5>{{user.email}}</h5>
+          </th>
+          <th>
+            <h5>{{user.mobileNumber}}</h5>
+          </th>
+          <th>
+            <h5>{{user.birthDate}}</h5>
+          </th>
+        </tr>
       </table>
     </div>
   </div>

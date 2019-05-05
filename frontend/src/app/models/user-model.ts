@@ -4,7 +4,7 @@ export class UserModel {
   login: string;
   password: string;
   firstName: string;
-  secondName: string;
+  lastName: string;
   mobileNumber: string;
   logoUrl: string;
   birthDate: Date;
@@ -18,7 +18,7 @@ export class UserModel {
     cloneUserModel.password = user.password;
     cloneUserModel.logoUrl = user.logoUrl;
     cloneUserModel.firstName = user.firstName;
-    cloneUserModel.secondName = user.secondName;
+    cloneUserModel.lastName = user.lastName;
     cloneUserModel.mobileNumber = user.mobileNumber;
     cloneUserModel.birthDate = user.birthDate;
     cloneUserModel.role = user.role;
@@ -30,7 +30,7 @@ export class UserSafeModel{
   id: string;
   email: string;
   firstName: string;
-  secondName: string;
+  lastName: string;
   mobileNumber: string;
   logoUrl: string;
   birthDate: Date;
@@ -42,7 +42,7 @@ export class UserSafeModel{
     cloneUserModel.email = user.email;
     cloneUserModel.logoUrl = user.logoUrl;
     cloneUserModel.firstName = user.firstName;
-    cloneUserModel.secondName = user.secondName;
+    cloneUserModel.lastName = user.lastName;
     cloneUserModel.mobileNumber = user.mobileNumber;
     cloneUserModel.birthDate = user.birthDate;
     cloneUserModel.role = user.role;

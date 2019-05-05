@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {UserSafeModel} from "../../../../../models/user-model";
+import {UserService} from "../../../../../services/user.service";
 
 @Component({
   selector: 'app-userlist',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./userlist.component.css']
 })
 export class UserlistComponent implements OnInit {
+  public users: UserSafeModel[];
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
+    this.loadData();
+  }
+
+  private loadData():void{
+    this.userService.getAllUsers().subscribe(data=>{
+      this.users = data as UserSafeModel[];
+
+    })
   }
 
 }

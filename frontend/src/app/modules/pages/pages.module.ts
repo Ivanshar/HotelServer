@@ -26,6 +26,9 @@ import { AdminmenuComponent } from './components/admin/adminmenu/adminmenu.compo
 import { AddadminComponent } from './components/admin/addadmin/addadmin.component';
 import { UserlistComponent } from './components/admin/userlist/userlist.component';
 import {ReviewService} from "../../services/review.service";
+import {UserService} from "../../services/user.service";
+import {ReservationService} from "../../services/reservation.service";
+import {RoomService} from "../../services/room.service";
 
 @NgModule({
   declarations: [HomeComponent, AboutComponent, EventsComponent, RegistrationComponent,
@@ -57,7 +60,10 @@ import {ReviewService} from "../../services/review.service";
     AddadminComponent, UserlistComponent
   ],
   providers:[
-    ReviewService
+    ReviewService,
+    UserService,
+    ReservationService,
+    RoomService
   ]
 })
 export class PagesModule { }

@@ -12,19 +12,19 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api/users")
 public class UserController {
     @Autowired
     private UserService userService;
 
     private UserToUserDTO userConverter = new UserToUserDTO();
 
-    @RequestMapping(value = "/login/{login}", method = RequestMethod.GET)
+    @GetMapping("/login/{login}")
     public UserEntity getUserByLogin(@PathVariable(name = "login") String login){
         return userService.findByLogin(login);
     }
 
-    @RequestMapping(value = "/id/{id}", method = RequestMethod.GET)
+    @GetMapping("/id/{id}")
     public ResponseEntity<UserDTO> getUserById(@PathVariable int id){
         Optional<UserEntity> userEntity = userService.findById(id);
         if(userEntity.isPresent()){
@@ -35,7 +35,7 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "/login/{login}/ex", method = RequestMethod.GET)
+    @GetMapping("/login/{login}/ex")
     public ResponseEntity<Boolean> ifUserExistsByLogin(@PathVariable String login){
         UserEntity userEntity = userService.findByLogin(login);
         if(userEntity != null){
@@ -45,7 +45,7 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "/email/{email}", method = RequestMethod.GET)
+    @GetMapping("/email/{email}")
     public ResponseEntity<Boolean> ifUserExistsByEmail(@PathVariable String email){
         UserEntity userEntity = userService.findByEmail(email);
         if(userEntity != null){
@@ -55,7 +55,7 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "", method = RequestMethod.POST)
+    @PostMapping("")
     public ResponseEntity saveNewUser(@RequestBody UserEntity userEntity){
         UserEntity userEntity1 = userService.save(userEntity);
         if(userEntity1 != null){
@@ -65,7 +65,7 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    @GetMapping(value = "/list")
     public ResponseEntity<List<UserDTO>> getUsersList(){
         List<UserEntity> userEntities = userService.findAll();
         if(!userEntities.isEmpty()){
