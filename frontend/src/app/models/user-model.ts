@@ -25,3 +25,27 @@ export class UserModel {
     return cloneUserModel;
   }
 }
+
+export class UserSafeModel{
+  id: string;
+  email: string;
+  firstName: string;
+  secondName: string;
+  mobileNumber: string;
+  logoUrl: string;
+  birthDate: Date;
+  role: boolean;
+
+  static cloneBase(user: UserSafeModel):UserSafeModel{
+    const cloneUserModel: UserSafeModel = new UserSafeModel();
+    cloneUserModel.id = user.id;
+    cloneUserModel.email = user.email;
+    cloneUserModel.logoUrl = user.logoUrl;
+    cloneUserModel.firstName = user.firstName;
+    cloneUserModel.secondName = user.secondName;
+    cloneUserModel.mobileNumber = user.mobileNumber;
+    cloneUserModel.birthDate = user.birthDate;
+    cloneUserModel.role = user.role;
+    return cloneUserModel;
+  }
+}

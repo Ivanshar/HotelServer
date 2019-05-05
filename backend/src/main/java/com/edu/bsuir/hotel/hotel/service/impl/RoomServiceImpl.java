@@ -17,4 +17,9 @@ public class RoomServiceImpl implements RoomService {
     public List<RoomEntity> findAllByRoomType(String roomType) {
         return roomRepository.findAllByRoomType(roomType);
     }
+
+    @Override
+    public RoomEntity save(RoomEntity roomEntity) {
+        return roomRepository.save(roomEntity);
+    }
 }

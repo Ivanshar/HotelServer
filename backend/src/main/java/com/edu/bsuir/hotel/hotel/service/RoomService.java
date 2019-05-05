@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface RoomService {
     List<RoomEntity> findAllByRoomType(String roomType);
+    RoomEntity save(RoomEntity roomEntity);
 }
