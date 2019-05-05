@@ -21,7 +21,7 @@
                    min="2019-01-01" max="2019-12-31">
                   <br>
             <label for="adult">Adult</label>
-            <select id="adult" class="form-control form-control-lg col-2" value="0">
+            <select id="adult" class="form-control form-control-lg col-2">
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -36,7 +36,8 @@
                    min="2018-01-01" max="2018-12-31">
         <br>
             <label for="child">Child</label>
-            <select id="child" class="form-control form-control-lg col-2" value="0">
+            <select id="child" class="form-control form-control-lg col-2">
+              <option>0</option>
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -47,22 +48,22 @@
         </tr>
       </table>
 
-      <div class="custom-control custom-radio">
-        <input type="radio" class="custom-control-input btn-danger" id="TV" name="RadiosTV">
-        <label class="custom-control-label" for="TV">TV</label>
+      <div class="form-check row d-flex justify-content-start mt-5">
+        <input class="form-check-input ml-4" type="checkbox" value="" id="tvCheck">
+        <label class="form-check-label ml-5" for="tvCheck">TV</label>
       </div>
-      <div class="custom-control custom-radio">
-        <input type="radio" class="custom-control-input btn-danger" id="fridge" name="RadiosFridge">
-        <label class="custom-control-label" for="fridge">Fridge</label>
+      <div class="form-check row d-flex justify-content-start mt-2">
+        <input class="form-check-input ml-4" type="checkbox" value="" id="fridgeCheck">
+        <label class="form-check-label ml-5" for="fridgeCheck">Fridge</label>
       </div>
-      <div class="custom-control custom-radio">
-        <input type="radio" class="custom-control-input btn-danger" id="babyBad" name="RadiosBad">
-        <label class="custom-control-label" for="babyBad">Baby bad</label>
+      <div class="form-check row d-flex justify-content-start mt-2">
+        <input class="form-check-input ml-4" type="checkbox" value="" id="babybedCheck">
+        <label class="form-check-label ml-5" for="babybedCheck">Baby bed</label>
       </div>
-      <div>
-      <input type="radio" class="custom-control-input btn-danger" id="bath" name="Bath">
-      <label class="custom-control-label" for="bath">Bath</label>
-    </div>
+      <div class="form-check row d-flex justify-content-start mt-2">
+        <input class="form-check-input ml-4" type="checkbox" value="" id="BathCheck">
+        <label class="form-check-label ml-5" for="BathCheck">Bath</label>
+      </div>
 
       <form action="" method="post" name="registration" class="regblank">
         <h1 style="color: #ff4157; padding: 20px 0px 20px;font-size: 40px">Prise: 999 $</h1>
