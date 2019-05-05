@@ -35,7 +35,7 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "/login/{login}", method = RequestMethod.GET)
+    @RequestMapping(value = "/login/{login}/ex", method = RequestMethod.GET)
     public ResponseEntity<Boolean> ifUserExistsByLogin(@PathVariable String login){
         UserEntity userEntity = userService.findByLogin(login);
         if(userEntity != null){

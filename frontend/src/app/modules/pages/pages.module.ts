@@ -54,6 +54,9 @@ import { UserlistComponent } from './components/admin/userlist/userlist.componen
     ReductprofComponent,
     AddroomComponent, RoomlistComponent, AddeventComponent, EventlistComponent, ConflistComponent, AdminmenuComponent,
     AddadminComponent, UserlistComponent
-      ]
+  ],
+  providers:[
+
+  ]
 })
 export class PagesModule { }

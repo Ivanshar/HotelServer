@@ -1,4 +1,4 @@
-import {UserModel} from "./user-model";
+import {UserModel, UserSafeModel} from "./user-model";
 import {RoomModel} from "./room-model";
 
 export class ReservationModel {
@@ -6,7 +6,7 @@ export class ReservationModel {
   dateFrom: Date;
   dateTo: Date;
   personCount: string;
-  user: UserModel;
+  user: UserSafeModel;
   room: RoomModel;
 
   static cloneBase(reserv: ReservationModel): ReservationModel{

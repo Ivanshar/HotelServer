@@ -1,11 +1,11 @@
-import {UserModel} from "./user-model";
+import {UserModel, UserSafeModel} from "./user-model";
 import {EventModel} from "./event-model";
 
 export class EventrecordModel {
   id: string;
   timeFrom: Date;
   timeTo: Date;
-  user: UserModel;
+  user: UserSafeModel;
   event: EventModel;
 
   static cloneBase(record: EventrecordModel): EventrecordModel{
