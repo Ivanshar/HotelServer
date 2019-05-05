@@ -32,7 +32,7 @@ const routes: Routes = [
   {path:'review', component:ReviewComponent},
   {path:'registration', component:RegistrationComponent},
   {path:'profile', component:ProfileComponent},
-  {path:'roombook', component:RoombookComponent},
+  {path:'roombook/:type', component:RoombookComponent},
   {path:'eventbook', component:EventbookComponent},
   {path:'confbook', component:ConfbookComponent},
   {path:'users', component:UsersComponent},

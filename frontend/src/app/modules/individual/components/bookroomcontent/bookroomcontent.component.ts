@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-bookroomcontent',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bookroomcontent.component.css']
 })
 export class BookroomcontentComponent implements OnInit {
+  @Input() public  roomType: string;
 
   constructor() { }
 
