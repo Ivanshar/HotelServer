@@ -34,4 +34,14 @@ public class ReviewController {
             return null;
         }
     }
+
+    @GetMapping("")
+    public List<ReviewDTO> getAll(){
+        List<ReviewEntity> entities = reviewService.findAll();
+        if(entities != null){
+            return revConverter.convert(entities);
+        }else {
+            return null;
+        }
+    }
 }

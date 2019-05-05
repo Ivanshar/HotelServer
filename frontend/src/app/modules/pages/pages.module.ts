@@ -25,6 +25,7 @@ import { ConflistComponent } from './components/admin/conflist/conflist.componen
 import { AdminmenuComponent } from './components/admin/adminmenu/adminmenu.component';
 import { AddadminComponent } from './components/admin/addadmin/addadmin.component';
 import { UserlistComponent } from './components/admin/userlist/userlist.component';
+import {ReviewService} from "../../services/review.service";
 
 @NgModule({
   declarations: [HomeComponent, AboutComponent, EventsComponent, RegistrationComponent,
@@ -56,7 +57,7 @@ import { UserlistComponent } from './components/admin/userlist/userlist.componen
     AddadminComponent, UserlistComponent
   ],
   providers:[
-
+    ReviewService
   ]
 })
 export class PagesModule { }

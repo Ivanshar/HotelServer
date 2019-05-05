@@ -6,6 +6,6 @@
   </div>
 </section>
 <div class="clearfix"></div>
-<app-reviewcard></app-reviewcard>
+<app-reviewcard *ngFor="let rev of reviews" [reviews]="rev"></app-reviewcard>
 <app-reviewblank></app-reviewblank>
 <app-footer></app-footer>

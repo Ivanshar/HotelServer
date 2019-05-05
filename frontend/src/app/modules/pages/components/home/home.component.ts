@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ReviewService} from "../../../../services/review.service";
+import {ReviewModel} from "../../../../models/review-model";
 
 @Component({
   selector: 'app-home',
@@ -10,6 +12,10 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.loadData();
+  }
+
+  public loadData():void{
   }
 
 }

@@ -11,4 +11,8 @@ export class ReviewService {
   getLast3Comments():Observable<ReviewModel[]>{
     return this.http.get<ReviewModel[]>("/api/reviews/last");
   }
+
+  getAll():Observable<ReviewModel[]>{
+    return this.http.get<ReviewModel[]>("/api/reviews");
+  }
 }

@@ -5,7 +5,6 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { ServiceComponent } from './components/service/service.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { ResortComponent } from './components/resort/resort.component';
-import { BlogComponent } from './components/blog/blog.component';
 import { AboutinfoComponent } from './components/aboutinfo/aboutinfo.component';
 import { RoomcardsComponent } from './components/roomcards/roomcards.component';
 import {RouterModule} from "@angular/router";
@@ -26,7 +25,7 @@ import { AddroomblankComponent } from './components/admin/addroomblank/addroombl
 import { AddeventblankComponent } from './components/admin/addeventblank/addeventblank.component';
 
 @NgModule({
-  declarations: [FooterComponent, CarouselComponent, ServiceComponent, GalleryComponent, ResortComponent, BlogComponent,
+  declarations: [FooterComponent, CarouselComponent, ServiceComponent, GalleryComponent, ResortComponent,
     AboutinfoComponent, RoomcardsComponent, EventcardsComponent, ConferencecardComponent, ReviewblankComponent,
     ReviewcardComponent, RegistrblankComponent, ProfileviewComponent, BooklistComponent, ReductprofviewComponent,
     FastbookviewComponent, PaymantcardComponent, BookroomcontentComponent, BookeventcontentComponent,
@@ -39,7 +38,6 @@ import { AddeventblankComponent } from './components/admin/addeventblank/addeven
   ],exports:[
     CarouselComponent,
     ServiceComponent,
-    BlogComponent,
     GalleryComponent,
     ResortComponent,
     ServiceComponent,
