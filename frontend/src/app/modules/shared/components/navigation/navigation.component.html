@@ -34,14 +34,17 @@
             </div>
           </nav>
         </div>
-        <div class="col-md-2  col-sm-4 col-xs-12 hidden-sm">
-          <div class="text-right"><button type="button" class="book-now-btn" data-toggle="modal" data-target="#exampleModal">Sign in</button></div>
+        <div class="col-md-2  col-sm-4 col-xs-12 hidden-sm" *ngIf="auth.user == null">
+          <div class="text-right"><button type="button" class="book-now-btn" data-toggle="modal" data-target="#exampleModal">Войти</button></div>
         </div>
-        <div class="col-md-2  col-sm-4 col-xs-12 hidden-sm">
-          <div class="text-right"><button type="button" class="book-now-btn" data-toggle="modal"><a routerLink="/profile">Account</a></button></div>
+        <div class="col-md-2  col-sm-4 col-xs-12 hidden-sm" *ngIf="auth.user != null">
+          <div class="text-right"><button type="button" class="book-now-btn" data-toggle="modal"><a routerLink="/profile">Профиль</a></button></div>
         </div>
-        <div class="col-md-2  col-sm-4 col-xs-12 hidden-sm">
-          <div class="text-right"><button type="button" class="book-now-btn" data-toggle="modal"><a routerLink="/adminmenu">Admin menu</a></button></div>
+        <div class="col-md-2  col-sm-4 col-xs-12 hidden-sm" *ngIf="auth.user != null">
+          <div class="text-right"><button type="button" class="book-now-btn" (click)="logOut()">Выйти</button></div>
+        </div>
+        <div class="col-md-2  col-sm-4 col-xs-12 hidden-sm" *ngIf="isAdmin">
+          <div class="text-right"><button type="button" class="book-now-btn" data-toggle="modal"><a routerLink="/adminmenu">Адм. меню</a></button></div>
         </div>
       </div>
     </div>

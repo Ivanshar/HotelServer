@@ -10,6 +10,7 @@ import {AuthService} from "../../../../services/auth.service";
 export class NavigationComponent implements OnInit {
 
   public loginUser:UserModel = new UserModel();
+  public isAdmin: boolean = false;
 
   constructor(private auth: AuthService) { }
 
@@ -18,6 +19,11 @@ export class NavigationComponent implements OnInit {
 
   public onSubmit():void{
     this.auth.signIn(this.loginUser);
+    if(this.auth.user.role == 1) this.isAdmin = true;
+  }
+
+  public logOut():void{
+    this.auth.logOut();
   }
 
 }

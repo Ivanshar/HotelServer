@@ -11,6 +11,7 @@ import {UserModel} from "../../../../models/user-model";
 export class ProfileviewComponent implements OnInit {
 
   public userInfo: UserModel;
+  public loaded: boolean = false;
 
   constructor(public auth: AuthService,
               public userService: UserService) { }
@@ -22,6 +23,7 @@ export class ProfileviewComponent implements OnInit {
   private loadData():void{
     this.userService.getUserById(this.auth.user.id).subscribe(data=>{
       this.userInfo = data;
+      this.loaded = true;
     });
   }
 
