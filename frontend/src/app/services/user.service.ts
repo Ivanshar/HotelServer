@@ -15,4 +15,13 @@ export class UserService {
   public getAllUsers():Observable<UserSafeModel[]>{
     return this.http.get<UserSafeModel[]>("/api/users/list");
   }
+
+  findUserByEmail(email:string): any{
+    return this.http.get("/api/users/email/"+email+"/ex");
+  }
+
+  findUserByLogin(login:string): any{
+    return this.http.get("/api/users/login/"+login+"/ex");
+  }
+
 }

@@ -12,8 +12,8 @@ export class AuthService {
 
   constructor(private http: HttpClient,
               private router: Router) {
-    let user = JSON.parse(localStorage.getItem('user'));
-    let token = localStorage.getItem('token');
+    let user = JSON.parse(sessionStorage.getItem('user'));
+    let token = sessionStorage.getItem('token');
     if(user && token){
       this.user = user;
       this.token = token;
@@ -24,11 +24,11 @@ export class AuthService {
   }
 
   public getToken(user: UserModel):Observable<AuthToken>{
-    return this.http.post<AuthToken>("/api/users/auth/token", user);
+    return this.http.post<AuthToken>("/api/auth/token", user);
   }
 
-  public regNewUser(user: UserModel): Observable<AuthToken>{
-    return this.http.post<AuthToken>('api/users/auth/sign-up',user);
+  public regNewUser(user: UserModel): Observable<UserModel>{
+    return this.http.post<UserModel>('api/auth/sign-up',user);
   }
 
   public userAuth():Observable<UserModel>{
@@ -40,8 +40,8 @@ export class AuthService {
       this.token = data.token;
       this.userAuth().subscribe(data=>{
         this.user = data;
-        localStorage.setItem("user", JSON.stringify(this.user));
-        localStorage.setItem("token", this.token);
+        sessionStorage.setItem("user", JSON.stringify(this.user));
+        sessionStorage.setItem("token", this.token);
         this.router.navigate(['']);
         setTimeout(location.reload.bind(location), 100);
       }, error1 => {
@@ -54,22 +54,14 @@ export class AuthService {
 
   public signUp(authUser: UserModel):void{
     this.regNewUser(authUser).subscribe(data=>{
-      this.token = data.token;
-      this.userAuth().subscribe(data=>{
-        localStorage.setItem("user", JSON.stringify(data));
-        localStorage.setItem("token", this.token);
-        this.user = data;
-        this.router.navigate(['']);
-      }, error1 => {
-        this.toErrorPage(error1);
-      })
+      this.router.navigate(['']);
     }, error1 => {
       this.toErrorPage(error1);
     })
   }
 
   public logOut():void{
-    localStorage.clear();
+    sessionStorage.clear();
     this.user = null;
     this.token = "";
     this.router.navigate(['']);

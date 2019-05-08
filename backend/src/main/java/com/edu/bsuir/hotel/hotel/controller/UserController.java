@@ -3,10 +3,13 @@ package com.edu.bsuir.hotel.hotel.controller;
 import com.edu.bsuir.hotel.hotel.converter.UserToUserDTO;
 import com.edu.bsuir.hotel.hotel.dto.UserDTO;
 import com.edu.bsuir.hotel.hotel.entity.UserEntity;
+import com.edu.bsuir.hotel.hotel.service.StorageService;
 import com.edu.bsuir.hotel.hotel.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,6 +19,8 @@ import java.util.Optional;
 public class UserController {
     @Autowired
     private UserService userService;
+    @Autowired
+    private StorageService storageService;
 
     private UserToUserDTO userConverter = new UserToUserDTO();
 
@@ -45,7 +50,7 @@ public class UserController {
         }
     }
 
-    @GetMapping("/email/{email}")
+    @GetMapping("/email/{email}/ex")
     public ResponseEntity<Boolean> ifUserExistsByEmail(@PathVariable String email){
         UserEntity userEntity = userService.findByEmail(email);
         if(userEntity != null){
@@ -73,6 +78,25 @@ public class UserController {
             return ResponseEntity.ok(userDTOS);
         }else {
             return ResponseEntity.ok(null);
+        }
+    }
+
+    @PostMapping("/image")
+    public ResponseEntity saveProductImage(@RequestParam("image") MultipartFile file){
+        if(storageService.storeUserImage(file)){
+            return ResponseEntity.ok().build();
+        }else {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+    @GetMapping("/image/{name}")
+    public ResponseEntity<Resource> getProductImage(@PathVariable String name){
+        Resource res = storageService.getUserImage(name);
+        if(res != null){
+            return ResponseEntity.ok(res);
+        }else {
+            return ResponseEntity.notFound().build();
         }
     }
 }

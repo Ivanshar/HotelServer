@@ -23,6 +23,11 @@ import { BookeventcontentComponent } from './components/bookeventcontent/bookeve
 import { BookconfcontentComponent } from './components/bookconfcontent/bookconfcontent.component';
 import { AddroomblankComponent } from './components/admin/addroomblank/addroomblank.component';
 import { AddeventblankComponent } from './components/admin/addeventblank/addeventblank.component';
+import {FormsModule} from "@angular/forms";
+import {AuthService} from "../../services/auth.service";
+import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {AuthInterceptorService} from "../../services/auth-interceptor.service";
+import {UserService} from "../../services/user.service";
 
 @NgModule({
   declarations: [FooterComponent, CarouselComponent, ServiceComponent, GalleryComponent, ResortComponent,
@@ -34,7 +39,8 @@ import { AddeventblankComponent } from './components/admin/addeventblank/addeven
     AddeventblankComponent],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],exports:[
     CarouselComponent,
     ServiceComponent,
@@ -58,6 +64,12 @@ import { AddeventblankComponent } from './components/admin/addeventblank/addeven
     BookconfcontentComponent,
     AddroomblankComponent,
     AddeventblankComponent
+  ],
+  providers:[
+    UserService,
+    AuthService,
+    AuthInterceptorService,
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}
   ]
 })
 export class IndividualModule { }

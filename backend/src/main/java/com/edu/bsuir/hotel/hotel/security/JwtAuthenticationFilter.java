@@ -17,45 +17,48 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class JwtAuthenticationFilter extends OncePerRequestFilter {
-    @Autowired
-    private TokenProvider tokenProvider;
+import static com.edu.bsuir.hotel.hotel.security.SecurityJwtConstants.HEADER_STRING;
+import static com.edu.bsuir.hotel.hotel.security.SecurityJwtConstants.TOKEN_PREFIX;
 
+public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Qualifier("customUserDetailsService")
     @Autowired
     private UserDetailsService userDetailsService;
 
+    @Autowired
+    private TokenProvider jwtTokenUtil;
+
     @Override
-    protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException {
-        String header = httpServletRequest.getHeader(SecurityJwtConstants.HEADER_STRING);
-        String userName = null;
+    protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException {
+        String header = req.getHeader(HEADER_STRING);
+        String username = null;
         String authToken = null;
-        if (header != null && header.startsWith(SecurityJwtConstants.TOKEN_PREFIX)) {
-            authToken = header.replace(SecurityJwtConstants.TOKEN_PREFIX, "");
+        if (header != null && header.startsWith(TOKEN_PREFIX)) {
+            authToken = header.replace(TOKEN_PREFIX,"");
             try {
-                userName = tokenProvider.getUsernameFromToken(authToken);
+                username = jwtTokenUtil.getUsernameFromToken(authToken);
             } catch (IllegalArgumentException e) {
-                logger.error("An error occurred during getting email from token.", e);
+                logger.error("an error occured during getting username from token", e);
             } catch (ExpiredJwtException e) {
-                logger.warn("The token is expired and not valid anymore.", e);
-            } catch (SignatureException e) {
-                logger.error("Authentication failed. email and password not valid.", e);
+                logger.warn("the token is expired and not valid anymore", e);
+            } catch(SignatureException e){
+                logger.error("Authentication Failed. Username or Password not valid.");
             }
         } else {
-            logger.warn("Couldn't find bearer string, will ignore the header.");
+            logger.warn("couldn't find bearer string, will ignore the header");
         }
+        if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
 
-        if (userName != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-            UserDetails userDetails = userDetailsService.loadUserByUsername(userName);
+            UserDetails userDetails = userDetailsService.loadUserByUsername(username);
 
-            if (tokenProvider.validateToken(authToken, userDetails)) {
-                UsernamePasswordAuthenticationToken authentication = tokenProvider.getAuthentication(authToken, SecurityContextHolder.getContext().getAuthentication(), userDetails);
-                authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(httpServletRequest));
-                logger.info("Authenticated user " + userName + ", setting security context.");
+            if (jwtTokenUtil.validateToken(authToken, userDetails)) {
+                UsernamePasswordAuthenticationToken authentication = jwtTokenUtil.getAuthentication(authToken, SecurityContextHolder.getContext().getAuthentication(), userDetails);
+                authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(req));
+                logger.info("authenticated user " + username + ", setting security context");
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }
         }
 
-        filterChain.doFilter(httpServletRequest, httpServletResponse);
+        chain.doFilter(req, res);
     }
 }
