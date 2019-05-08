@@ -49,3 +49,7 @@ export class UserSafeModel{
     return cloneUserModel;
   }
 }
+
+export class AuthToken{
+  token:string;
+}
