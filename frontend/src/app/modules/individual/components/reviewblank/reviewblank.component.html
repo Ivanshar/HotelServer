@@ -2,11 +2,11 @@
   <div class="container">
     <div class="col-md-10 contact-form">
       <h3>Send a <span>Review</span></h3>
-      <form action="#" method="post">
-        <input type="text" class="form-control inputtext" name="Name" placeholder="Name" required="">
-        <input type="email" class="form-control inputtext" name="Email" placeholder="Email" required="">
+      <form action="" method="post">
+        <input type="text" [formControl]="nameControl" class="form-control inputtext" name="Name" placeholder="Name" required="">
+        <input type="email" [formControl]="emailControl" class="form-control inputtext" name="Email" placeholder="Email" required="">
         <textarea class="form-control" name="Message" placeholder="Review Here...." required=""></textarea>
-        <input type="submit" class="submit-btn inputtext" value="Submit">
+        <input type="submit" [formControl]="rewiewControl" class="submit-btn inputtext" value="Submit">
       </form>
     </div>
     <div class="clearfix"></div>

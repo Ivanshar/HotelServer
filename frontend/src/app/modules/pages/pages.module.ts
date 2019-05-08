@@ -29,13 +29,14 @@ import {ReviewService} from "../../services/review.service";
 import {UserService} from "../../services/user.service";
 import {ReservationService} from "../../services/reservation.service";
 import {RoomService} from "../../services/room.service";
+import { ErrorComponent } from './components/error/error.component';
 
 @NgModule({
   declarations: [HomeComponent, AboutComponent, EventsComponent, RegistrationComponent,
     ConferenceComponent, RoomsComponent, ReviewComponent, ProfileComponent, RoombookComponent,
     EventbookComponent, ConfbookComponent, UsersComponent, SignComponent, ReductprofComponent,
     AddroomComponent, RoomlistComponent, AddeventComponent, EventlistComponent, ConflistComponent,
-    AdminmenuComponent, AddadminComponent, UserlistComponent],
+    AdminmenuComponent, AddadminComponent, UserlistComponent, ErrorComponent],
   imports: [
     CommonModule,
     SharedModule,
@@ -57,7 +58,8 @@ import {RoomService} from "../../services/room.service";
     SignComponent,
     ReductprofComponent,
     AddroomComponent, RoomlistComponent, AddeventComponent, EventlistComponent, ConflistComponent, AdminmenuComponent,
-    AddadminComponent, UserlistComponent
+    AddadminComponent, UserlistComponent,
+    ErrorComponent
   ],
   providers:[
     ReviewService,

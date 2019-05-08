@@ -15,7 +15,7 @@ export class RoomModel {
     cloneRoom.price = room.price;
     cloneRoom.maxPersons = room.maxPersons;
     cloneRoom.isActive = room.isActive;
-    cloneRoom.hasBabyBed = room.isActive;
+    cloneRoom.hasBabyBed = room.hasBabyBed;
     cloneRoom.hasTv = room.hasTv;
     cloneRoom.hasBath = room.hasBath;
     cloneRoom.roomType = room.roomType;

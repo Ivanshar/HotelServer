@@ -5,9 +5,10 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { FooterComponent } from './components/footer/footer.component';
 import {RouterModule} from "@angular/router";
 import { AdminheaderComponent } from './components/adminheader/adminheader.component';
+import { PaymantmodalComponent } from './components/paymantmodal/paymantmodal.component';
 
 @NgModule({
-  declarations: [HeaderComponent, NavigationComponent, FooterComponent, AdminheaderComponent],
+  declarations: [HeaderComponent, NavigationComponent, FooterComponent, AdminheaderComponent, PaymantmodalComponent],
   imports: [
     CommonModule,
     RouterModule
@@ -15,7 +16,8 @@ import { AdminheaderComponent } from './components/adminheader/adminheader.compo
     HeaderComponent,
     FooterComponent,
     NavigationComponent,
-    AdminheaderComponent
+    AdminheaderComponent,
+    PaymantmodalComponent
   ]
 })
 export class SharedModule { }

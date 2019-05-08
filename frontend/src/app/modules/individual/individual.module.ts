@@ -17,7 +17,6 @@ import { ProfileviewComponent } from './components/profileview/profileview.compo
 import { BooklistComponent } from './components/booklist/booklist.component';
 import { ReductprofviewComponent } from './components/reductprofview/reductprofview.component';
 import { FastbookviewComponent } from './components/fastbookview/fastbookview.component';
-import { PaymantcardComponent } from './components/paymantcard/paymantcard.component';
 import { BookroomcontentComponent } from './components/bookroomcontent/bookroomcontent.component';
 import { BookeventcontentComponent } from './components/bookeventcontent/bookeventcontent.component';
 import { BookconfcontentComponent } from './components/bookconfcontent/bookconfcontent.component';
@@ -30,7 +29,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   declarations: [FooterComponent, CarouselComponent, ServiceComponent, GalleryComponent, ResortComponent,
     AboutinfoComponent, RoomcardsComponent, EventcardsComponent, ConferencecardComponent, ReviewblankComponent,
     ReviewcardComponent, RegistrblankComponent, ProfileviewComponent, BooklistComponent, ReductprofviewComponent,
-    FastbookviewComponent, PaymantcardComponent, BookroomcontentComponent, BookeventcontentComponent,
+    FastbookviewComponent, BookroomcontentComponent, BookeventcontentComponent,
     BookconfcontentComponent,
     AddroomblankComponent,
     AddeventblankComponent],
@@ -56,7 +55,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     BooklistComponent,
     ReductprofviewComponent,
     FastbookviewComponent,
-    PaymantcardComponent,
     BookroomcontentComponent,
     BookeventcontentComponent,
     BookconfcontentComponent,

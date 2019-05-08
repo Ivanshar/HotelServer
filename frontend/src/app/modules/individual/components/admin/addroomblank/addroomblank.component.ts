@@ -11,13 +11,29 @@ export class AddroomblankComponent implements OnInit {
 
   public newRoom: RoomModel = new RoomModel();
 
-  constructor() { }
+  constructor( private roomService: RoomService) { }
 
   ngOnInit() {
   }
 
   public regNewRoom():void{
-    console.log(this.newRoom);
-  }
 
+    if (!this.newRoom.hasBath) {
+      this.newRoom.hasBath = false;
+    }
+    if (!this.newRoom.hasBabyBed) {
+      this.newRoom.hasBabyBed = false;
+    }
+    if (!this.newRoom.hasFridge) {
+      this.newRoom.hasFridge = false;
+    }
+    if (!this.newRoom.hasTv) {
+      this.newRoom.hasTv = false;
+    }
+    if (!this.newRoom.isActive) {
+      this.newRoom.isActive = false;
+    }
+    console.log(this.newRoom);
+    this.roomService.postAllRoom(this.newRoom);
+  }
 }

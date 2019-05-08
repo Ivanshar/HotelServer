@@ -10,9 +10,9 @@
         </section>
       </div>
       <div class="col-sm">
-        <form action="" method="post" name="registration" class="regblank">
-          <label for="child">Type of event</label>
-          <select id="child" class="form-control form-control-lg col-6" >
+        <form (ngSubmit)="regNewEvent()" action="" method="post" name="registration" class="regblank">
+          <label for="eventType">Type of event</label>
+          <select id="eventType" class="form-control form-control-lg col-6" name="eventType" [(ngModel)]="newEvent.eventType">
             <option>Sport event</option>
             <option>Education</option>
             <option>Religious</option>
@@ -21,28 +21,28 @@
           </select>
           <div class="form-group">
             <label for="inputNumPeople">Max number of people</label>
-            <input type="number" class="form-control col-2" id="inputNumPeople" placeholder="1" min="0" max="1000">
+            <input type="number" class="form-control col-2" id="inputNumPeople" placeholder="1" min="0" max="1000" name="maxPersons" [(ngModel)]="newEvent.maxPersons">
           </div>
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" >
+            <input type="text" class="form-control" id="name" name="Name" [(ngModel)]="newEvent.name">
           </div>
           <div class="form-group">
             <label for="description">Description</label>
-            <textarea class="form-control" id="description" rows="4"></textarea>
+            <textarea class="form-control" id="description" rows="4" name="description" [(ngModel)]="newEvent.description"></textarea>
           </div>
           <table>
             <tr>
               <td>
                 <label class="start-finish" for="start">Start date and time:</label>
                 <input  class="form-control" type="datetime-local" id="start" name="trip-start" value="date"
-                        min="2019-01-01" max="2019-12-31">
+                        [(ngModel)]="newEvent.dateTimeStart" min="2019-01-01" max="2019-12-31">
                 <br>
               </td>
               <td>
                 <label  class="start-finish" for="finish">Finish date and time:</label>
                 <input class="form-control" type="datetime-local" id="finish" name="trip-start"
-                       value="2020-07-22"
+                       value="2020-07-22" [(ngModel)]="newEvent.dateTimeEnd"
                        min="2018-01-01" max="2018-12-31">
                 <br>
               </td>
@@ -50,11 +50,11 @@
           </table>
           <div class="form-group">
           <label for="imgEvent">Choose event picture:</label>
-          <input type="file" class="form-control col-12" id="imgEvent" name="avatar" accept="image/png, image/jpeg">
+          <input type="file" class="form-control col-12" id="imgEvent" name="avatar" accept="image/png, image/jpeg" [(ngModel)]="newEvent.logoUrl">
           </div>
             <div class="form-group input-price">
             <label for="inputPriceOfEvent">Price:  &nbsp; </label>
-            <input type="number" class="form-control col-2" id="inputPriceOfEvent" placeholder="1" min="0" max="1000">
+            <input type="number" class="form-control col-2" id="inputPriceOfEvent" placeholder="1" min="0" max="1000" name="price" [(ngModel)]="newEvent.price">
             <h3> &nbsp; $</h3>
           </div>
           <div class="text-center mx-auto" style="padding: 20px">

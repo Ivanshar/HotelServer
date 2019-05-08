@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {EventModel} from "../../../../../models/event-model";
+import {EventService} from "../../../../../services/event.service";
 
 @Component({
   selector: 'app-addeventblank',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddeventblankComponent implements OnInit {
 
-  constructor() { }
+
+  public newEvent: EventModel = new EventModel();
+
+  constructor( private roomService: EventService) { }
 
   ngOnInit() {
+  }
+
+  public regNewEvent():void{
+    console.log(this.newEvent);
+    this.roomService.postAllEvent(this.newEvent);
   }
 
 }

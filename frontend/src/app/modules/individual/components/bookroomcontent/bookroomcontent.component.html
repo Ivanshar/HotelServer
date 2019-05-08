@@ -6,22 +6,21 @@
 <section class="contact-block">
   <div class="container">
     <div class="list-group full-width-div  col-10 table-responsive">
-
+      <form action="" method="post" name="reservation" class="regblank" (ngSubmit)="makeReservation()">
       <div class="userinfo col-sm">
-        <form action="" method="post" name="registration" class="regblank">
           <h1 style="color: #ff4157; font-size: 40px">Type: {{roomType}}</h1>
           <h3 class="regblank">Name surname</h3>
-        </form>
       </div>
-      <table>
+      <table class="col-10">
         <tr>
           <td>
             <label class="start-finish" for="start">Start date:</label>
-            <input  class="form-control" type="date" id="start" name="trip-start" value="date"
+            <input  class="form-control col-8" type="date" id="start" name="trip-start"
+                    value="date" [(ngModel)]="newReservation.dateTo"
                    min="2019-01-01" max="2019-12-31">
                   <br>
             <label for="adult">Adult</label>
-            <select id="adult" class="form-control form-control-lg col-2">
+            <select id="adult" class="form-control form-control-lg col-3" name="child" [(ngModel)]="child">
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -31,12 +30,12 @@
           </td>
           <td>
             <label  class="start-finish" for="finish">Finish date:</label>
-            <input class="form-control" type="date" id="finish" name="trip-start"
-                   value="2020-07-22"
+            <input class="form-control col-8" type="date" id="finish" name="trip-start"
+                   value="2020-07-22" [(ngModel)]="newReservation.dateFrom"
                    min="2018-01-01" max="2018-12-31">
         <br>
             <label for="child">Child</label>
-            <select id="child" class="form-control form-control-lg col-2">
+            <select id="child" class="form-control form-control-lg col-3" name="adult" [(ngModel)]="adult">
               <option>0</option>
               <option>1</option>
               <option>2</option>
@@ -49,30 +48,28 @@
       </table>
 
       <div class="form-check row d-flex justify-content-start mt-5">
-        <input class="form-check-input ml-4" type="checkbox" value="" id="tvCheck">
+        <input class="form-check-input ml-4" type="checkbox" value="" id="tvCheck" name="TV" [(ngModel)]="newReservation.hasTv">
         <label class="form-check-label ml-5" for="tvCheck">TV</label>
       </div>
       <div class="form-check row d-flex justify-content-start mt-2">
-        <input class="form-check-input ml-4" type="checkbox" value="" id="fridgeCheck">
+        <input class="form-check-input ml-4" type="checkbox" value="" id="fridgeCheck" name="fridge"[(ngModel)]="newReservation.hasFridge">
         <label class="form-check-label ml-5" for="fridgeCheck">Fridge</label>
       </div>
       <div class="form-check row d-flex justify-content-start mt-2">
-        <input class="form-check-input ml-4" type="checkbox" value="" id="babybedCheck">
+        <input class="form-check-input ml-4" type="checkbox" value="" id="babybedCheck" name="babyBad" [(ngModel)]="newReservation.hasBabyBed">
         <label class="form-check-label ml-5" for="babybedCheck">Baby bed</label>
       </div>
       <div class="form-check row d-flex justify-content-start mt-2">
-        <input class="form-check-input ml-4" type="checkbox" value="" id="BathCheck">
+        <input class="form-check-input ml-4" type="checkbox" value="" id="BathCheck" name="bath" [(ngModel)]="newReservation.hasBath">
         <label class="form-check-label ml-5" for="BathCheck">Bath</label>
       </div>
-
-      <form action="" method="post" name="registration" class="regblank">
-        <h1 style="color: #ff4157; padding: 20px 0px 20px;font-size: 40px">Prise: 999 $</h1>
+        <!--<h1 style="color: #ff4157; padding: 20px 0px 20px;font-size: 40px">Prise: 999 $</h1>-->
+        <div class="text-center mx-auto">
+          <button type="submit" class=" btn btn-block btn-danger btn-lg"  data-toggle="modal" data-target="#toUpModal">Make payment</button>
+        </div>
       </form>
-
-      <div class="text-center mx-auto">
-        <button type="submit" class=" btn btn-block btn-danger btn-lg">Register</button>
-      </div>
-
     </div>
   </div>
 </section>
+
+

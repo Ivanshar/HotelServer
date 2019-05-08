@@ -22,6 +22,7 @@ import {EventlistComponent} from "./modules/pages/components/admin/eventlist/eve
 import {RoomlistComponent} from "./modules/pages/components/admin/roomlist/roomlist.component";
 import {UserlistComponent} from "./modules/pages/components/admin/userlist/userlist.component";
 import {AddadminComponent} from "./modules/pages/components/admin/addadmin/addadmin.component";
+import {ErrorComponent} from "./modules/pages/components/error/error.component";
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -45,7 +46,9 @@ const routes: Routes = [
   {path:'eventlist', component:EventlistComponent},
   {path:'roomlist', component:RoomlistComponent},
   {path:'userlist', component:UserlistComponent},
-  {path:'addadmin', component:AddadminComponent}
+  {path:'addadmin', component:AddadminComponent},
+  {path:'error', component:ErrorComponent}
+
 ];
 
 @NgModule({
