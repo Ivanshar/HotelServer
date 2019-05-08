@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {RoomModel} from "../../../../../models/room-model";
+import {RoomService} from "../../../../../services/room.service";
 
 @Component({
   selector: 'app-addroomblank',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddroomblankComponent implements OnInit {
 
+  public newRoom: RoomModel = new RoomModel();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public regNewRoom():void{
+    console.log(this.newRoom);
   }
 
 }

@@ -23,6 +23,8 @@ import { BookeventcontentComponent } from './components/bookeventcontent/bookeve
 import { BookconfcontentComponent } from './components/bookconfcontent/bookconfcontent.component';
 import { AddroomblankComponent } from './components/admin/addroomblank/addroomblank.component';
 import { AddeventblankComponent } from './components/admin/addeventblank/addeventblank.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 
 @NgModule({
   declarations: [FooterComponent, CarouselComponent, ServiceComponent, GalleryComponent, ResortComponent,
@@ -34,7 +36,9 @@ import { AddeventblankComponent } from './components/admin/addeventblank/addeven
     AddeventblankComponent],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],exports:[
     CarouselComponent,
     ServiceComponent,

@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import {PagesModule} from "./modules/pages/pages.module";
 import {IndividualModule} from "./modules/individual/individual.module";
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 
@@ -18,7 +19,9 @@ import {IndividualModule} from "./modules/individual/individual.module";
     AppRoutingModule,
     HttpClientModule,
     PagesModule,
-    IndividualModule
+    IndividualModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
