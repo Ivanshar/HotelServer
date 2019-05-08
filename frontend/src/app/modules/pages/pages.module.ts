@@ -29,7 +29,13 @@ import {ReviewService} from "../../services/review.service";
 import {UserService} from "../../services/user.service";
 import {ReservationService} from "../../services/reservation.service";
 import {RoomService} from "../../services/room.service";
+
 import { ErrorComponent } from './components/error/error.component';
+
+import {AuthService} from "../../services/auth.service";
+import {AuthInterceptorService} from "../../services/auth-interceptor.service";
+import {HTTP_INTERCEPTORS} from "@angular/common/http";
+
 
 @NgModule({
   declarations: [HomeComponent, AboutComponent, EventsComponent, RegistrationComponent,
@@ -65,7 +71,10 @@ import { ErrorComponent } from './components/error/error.component';
     ReviewService,
     UserService,
     ReservationService,
-    RoomService
+    RoomService,
+    AuthService,
+    AuthInterceptorService,
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}
   ]
 })
 export class PagesModule { }

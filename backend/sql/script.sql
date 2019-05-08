@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `hoteldb`.`user` (
   `role` TINYINT(1) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
   `login` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(150) NOT NULL,
   `first_name` VARCHAR(45) NOT NULL,
   `last_name` VARCHAR(45) NOT NULL,
   `mobile_number` VARCHAR(20) NOT NULL,

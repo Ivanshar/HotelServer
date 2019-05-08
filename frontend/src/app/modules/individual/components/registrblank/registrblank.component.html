@@ -10,7 +10,7 @@
         </section>
       </div>
       <div class="col-sm">
-        <form action="" method="post" name="registration" class="regblank">
+        <form action="" method="post" name="registration" class="regblank" (ngSubmit)="regNewUser()">
           <h5>Name</h5>
           <div class="input-group-prepend">
             <input type="text" [formControl]="firstnameControl" name="firstName"  class="form-control" id="firstname"
@@ -35,6 +35,7 @@
           <h5>Mobile number</h5>
           <div class="input-group-prepend">
             <input type="number" [formControl]="numberControl" name="number" class="form-control" id="number"   placeholder="+375(**)-***-**-**">
+
           </div>
           <div class="input-group-prepend mx-auto">
             <p class="text-center">By signing up you accept our <a href="#">Terms Of Use</a></p>

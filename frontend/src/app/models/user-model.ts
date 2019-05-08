@@ -8,7 +8,7 @@ export class UserModel {
   mobileNumber: string;
   logoUrl: string;
   birthDate: Date;
-  role: boolean;
+  role: number;
 
   static cloneBase(user: UserModel):UserModel{
     const cloneUserModel: UserModel = new UserModel();
@@ -34,7 +34,7 @@ export class UserSafeModel{
   mobileNumber: string;
   logoUrl: string;
   birthDate: Date;
-  role: boolean;
+  role: number;
 
   static cloneBase(user: UserSafeModel):UserSafeModel{
     const cloneUserModel: UserSafeModel = new UserSafeModel();
@@ -48,4 +48,8 @@ export class UserSafeModel{
     cloneUserModel.role = user.role;
     return cloneUserModel;
   }
+}
+
+export class AuthToken{
+  token:string;
 }
