@@ -29,16 +29,20 @@ import {ReviewService} from "../../services/review.service";
 import {UserService} from "../../services/user.service";
 import {ReservationService} from "../../services/reservation.service";
 import {RoomService} from "../../services/room.service";
+
+import { ErrorComponent } from './components/error/error.component';
+
 import {AuthService} from "../../services/auth.service";
 import {AuthInterceptorService} from "../../services/auth-interceptor.service";
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
+
 
 @NgModule({
   declarations: [HomeComponent, AboutComponent, EventsComponent, RegistrationComponent,
     ConferenceComponent, RoomsComponent, ReviewComponent, ProfileComponent, RoombookComponent,
     EventbookComponent, ConfbookComponent, UsersComponent, SignComponent, ReductprofComponent,
     AddroomComponent, RoomlistComponent, AddeventComponent, EventlistComponent, ConflistComponent,
-    AdminmenuComponent, AddadminComponent, UserlistComponent],
+    AdminmenuComponent, AddadminComponent, UserlistComponent, ErrorComponent],
   imports: [
     CommonModule,
     SharedModule,
@@ -60,7 +64,8 @@ import {HTTP_INTERCEPTORS} from "@angular/common/http";
     SignComponent,
     ReductprofComponent,
     AddroomComponent, RoomlistComponent, AddeventComponent, EventlistComponent, ConflistComponent, AdminmenuComponent,
-    AddadminComponent, UserlistComponent
+    AddadminComponent, UserlistComponent,
+    ErrorComponent
   ],
   providers:[
     ReviewService,

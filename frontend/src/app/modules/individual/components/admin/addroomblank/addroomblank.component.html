@@ -10,9 +10,9 @@
         </section>
       </div>
       <div class="col-sm">
-        <form action="" method="post" name="registration" class="regblank">
+        <form (ngSubmit)="regNewRoom()" action="" method="post" name="registration" class="regblank" >
           <label for="child">Type of room</label>
-          <select id="child" class="form-control form-control-lg col-6" >
+          <select id="child" class="form-control form-control-lg col-6" name="roomType" [(ngModel)]="newRoom.roomType">
             <option>Classic Room</option>
             <option>Classic Riverside View</option>
             <option>Hospitality Suite</option>
@@ -21,31 +21,31 @@
           </select>
           <div class="form-group">
             <label for="inputNumPeople">Number of people</label>
-            <input type="number" class="form-control col-2" id="inputNumPeople" placeholder="1" min="0" max="10">
+            <input type="number" class="form-control col-2" id="inputNumPeople" name="NumPeople" placeholder="1" min="0" max="10" [(ngModel)]="newRoom.maxPersons">
           </div>
           <div class="custom-control custom-radio">
-            <input type="radio" class="custom-control-input btn-danger" id="TV" name="RadiosTV">
+            <input type="checkbox" class="custom-control-input btn-danger" id="TV" name="RadiosTV" [(ngModel)]="newRoom.hasTv" value="false">
             <label class="custom-control-label" for="TV">TV</label>
           </div>
           <div class="custom-control custom-radio">
-            <input type="radio" class="custom-control-input btn-danger" id="fridge" name="RadiosFridge">
+            <input type="checkbox" class="custom-control-input btn-danger" id="fridge" name="RadiosFridge" [(ngModel)]="newRoom.hasFridge" value="false">
             <label class="custom-control-label" for="fridge">Fridge</label>
           </div>
           <div class="custom-control custom-radio">
-            <input type="radio" class="custom-control-input btn-danger" id="babyBad" name="RadiosBad">
+            <input type="checkbox" class="custom-control-input btn-danger" id="babyBad" name="RadiosBad" [(ngModel)]="newRoom.hasBabyBed" value="false">
             <label class="custom-control-label" for="babyBad">Baby bad</label>
           </div>
           <div class="custom-control custom-radio">
-            <input type="radio" class="custom-control-input btn-danger" id="bath" name="Bath">
+            <input type="checkbox" class="custom-control-input btn-danger" id="bath" name="Bath" [(ngModel)]="newRoom.hasBath" value="false">
             <label class="custom-control-label" for="bath">Bath</label>
           </div>
           <div class="form-group input-price">
             <label for="inputPriceOfEvent">Price:  &nbsp; </label>
-            <input type="number" class="form-control col-2" id="inputPriceOfEvent" placeholder="1" min="0" max="10000">
+            <input type="number" class="form-control col-2" id="inputPriceOfEvent" name="Price" placeholder="1" min="0" max="10000" [(ngModel)]="newRoom.price">
             <h3>&nbsp; $</h3>
           </div>
           <div class="custom-control custom-radio" style="padding-top: 20px">
-            <input type="radio" class="custom-control-input btn-danger" id="active" name="Active">
+            <input type="checkbox" class="custom-control-input btn-danger" id="active" name="Active" [(ngModel)]="newRoom.isActive" value="false">
             <label class="custom-control-label" for="active">ACTIVE</label>
           </div>
 

@@ -17,12 +17,13 @@ import { ProfileviewComponent } from './components/profileview/profileview.compo
 import { BooklistComponent } from './components/booklist/booklist.component';
 import { ReductprofviewComponent } from './components/reductprofview/reductprofview.component';
 import { FastbookviewComponent } from './components/fastbookview/fastbookview.component';
-import { PaymantcardComponent } from './components/paymantcard/paymantcard.component';
 import { BookroomcontentComponent } from './components/bookroomcontent/bookroomcontent.component';
 import { BookeventcontentComponent } from './components/bookeventcontent/bookeventcontent.component';
 import { BookconfcontentComponent } from './components/bookconfcontent/bookconfcontent.component';
 import { AddroomblankComponent } from './components/admin/addroomblank/addroomblank.component';
 import { AddeventblankComponent } from './components/admin/addeventblank/addeventblank.component';
+
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FormsModule} from "@angular/forms";
 import {AuthService} from "../../services/auth.service";
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
@@ -33,14 +34,15 @@ import {UserService} from "../../services/user.service";
   declarations: [FooterComponent, CarouselComponent, ServiceComponent, GalleryComponent, ResortComponent,
     AboutinfoComponent, RoomcardsComponent, EventcardsComponent, ConferencecardComponent, ReviewblankComponent,
     ReviewcardComponent, RegistrblankComponent, ProfileviewComponent, BooklistComponent, ReductprofviewComponent,
-    FastbookviewComponent, PaymantcardComponent, BookroomcontentComponent, BookeventcontentComponent,
+    FastbookviewComponent, BookroomcontentComponent, BookeventcontentComponent,
     BookconfcontentComponent,
     AddroomblankComponent,
     AddeventblankComponent],
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],exports:[
     CarouselComponent,
     ServiceComponent,
@@ -58,7 +60,6 @@ import {UserService} from "../../services/user.service";
     BooklistComponent,
     ReductprofviewComponent,
     FastbookviewComponent,
-    PaymantcardComponent,
     BookroomcontentComponent,
     BookeventcontentComponent,
     BookconfcontentComponent,

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Validators } from '@angular/forms';
 import {UserModel} from "../../../../models/user-model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {AuthService} from "../../../../services/auth.service";
@@ -10,6 +12,14 @@ import {UserService} from "../../../../services/user.service";
   styleUrls: ['./registrblank.component.css']
 })
 export class RegistrblankComponent implements OnInit {
+
+
+  firstnameControl: FormControl;
+  secondnameControl: FormControl;
+  numberControl: FormControl;
+  passwordControl: FormControl;
+  dateControl: FormControl;
+  emailControl: FormControl;
 
   public newUser: UserModel = new UserModel();
   public isAdmin: boolean = false;
@@ -23,6 +33,15 @@ export class RegistrblankComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.firstnameControl = new FormControl('', Validators.required);
+    this.secondnameControl = new FormControl('', Validators.required);
+    this.numberControl = new FormControl('', Validators.compose([Validators.required,Validators.min(9999999)])) ;
+    this.passwordControl = new FormControl('', Validators.compose([Validators.required,Validators.minLength(8)]));
+    this.dateControl = new FormControl('');
+    this.emailControl = new FormControl('', Validators.compose([
+      Validators.required,
+      Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+    ]));
   }
 
   public regNewUser():void{

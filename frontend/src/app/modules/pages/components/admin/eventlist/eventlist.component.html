@@ -4,29 +4,39 @@
   <div class="container">
     <div class="list-group full-width-div  col-12 table-responsive">
       <table class="table">
-        <tr><th>
-          <h2>Name</h2>
-          <h5>SAP tech</h5>
-        </th>
+        <tr>
+          <th><h2>#</h2></th>
+          <th><h2>Name</h2></th>
+          <th><h2>Max people</h2></th>
+          <th><h2>Type</h2></th>
+          <th><h2>Start</h2></th>
+          <th><h2>Finish</h2></th>
+          <th><h2>Price</h2></th>
+        </tr>
+        <tr *ngFor="let event of events; let i = index">
           <th>
-            <h2>Max people</h2>
-            <h5>999</h5>
+            <h5>{{i+1}}</h5>
           </th>
           <th>
-            <h2>Type</h2>
-            <h5>Sport</h5>
-          </th><th>
-            <h2>Start</h2>
-            <h5>21-05-2019 21:21</h5>
+            <h5>{{event.name}}</h5>
           </th>
           <th>
-            <h2>Finish</h2>
-            <h5>22-05-2019 11:21</h5>
+            <h5>{{event.maxPersons}}</h5>
           </th>
           <th>
-            <h2>Price</h2>
-            <h5>99$</h5>
-          </th></tr>
+            <h5>{{event.eventType}}</h5>
+          </th>
+          <th>
+            <h5>{{event.dateTimeStart}}</h5>
+          </th>
+          <th>
+            <h5>{{event.dateTimeEnd}}</h5>
+          </th>
+          <th>
+            <h5>{{event.price}}</h5>
+          </th>
+        </tr>
+
       </table>
     </div>
   </div>
