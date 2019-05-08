@@ -13,11 +13,11 @@
         <form action="" method="post" name="registration" class="regblank">
           <h1 style="color: #ff4157; font-size: 40px">Name Surname</h1>
           <h3 class="regblank">Email address:</h3>
-          <h2 class="regblank">email@email.by </h2>
+          <h2 class="regblank">{{userInfo.email}}</h2>
           <h3 class="regblank">Birth Date:</h3>
-          <h2 class="regblank">21.09.1990</h2>
+          <h2 class="regblank">{{userInfo.birthDate}}</h2>
           <h3 class="regblank">Mobile number:</h3>
-          <h2 class="regblank">+37529-111-110-11</h2>
+          <h2 class="regblank">+{{userInfo.mobileNumber}}</h2>
         </form>
       </div>
       <div class="col-md-2  col-sm-4 col-xs-12 edit-position position-absolute">

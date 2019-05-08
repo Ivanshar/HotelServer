@@ -24,7 +24,6 @@ import { AddroomblankComponent } from './components/admin/addroomblank/addroombl
 import { AddeventblankComponent } from './components/admin/addeventblank/addeventblank.component';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {FormsModule} from "@angular/forms";
 import {AuthService} from "../../services/auth.service";
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {AuthInterceptorService} from "../../services/auth-interceptor.service";

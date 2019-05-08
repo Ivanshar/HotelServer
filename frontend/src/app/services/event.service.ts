@@ -14,8 +14,8 @@ export class EventService {
     return this.http.post("/api/event", event );
   }
 
-  public getAllEvents():Observable<UserSafeModel[]>{
-    return this.http.get<UserSafeModel[]>("/api/event/list");
+  public getAllEvents():Observable<EventModel[]>{
+    return this.http.get<EventModel[]>("/api/event/list");
   }
 
 

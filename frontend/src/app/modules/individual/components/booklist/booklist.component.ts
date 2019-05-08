@@ -20,9 +20,9 @@ export class BooklistComponent implements OnInit {
   private loadData():void{
     this.reservationService.getAllReservations().subscribe(data=>{
       this.reservations = data as ReservationModel[];
-    })
+    });
     this.eventrecordServise.getAllEventrecords().subscribe((data=>{
-      this.reservations = data as ReservationModel[];
+      this.eventrecords = data as EventrecordModel[];
     }))
   }
 

@@ -13,28 +13,28 @@
         <form action="" method="post" name="registration" class="regblank" (ngSubmit)="regNewUser()">
           <h5>Name</h5>
           <div class="input-group-prepend">
-            <input type="text" [formControl]="firstnameControl" name="firstName"  class="form-control" id="firstname"
+            <input type="text" [formControl]="firstnameControl" name="firstName" [(ngModel)]="newUser.firstName" class="form-control" id="firstname"
                    placeholder="First Name">
-            <input type="text" [formControl]="secondnameControl" name="second" class="form-control" id="secondname"
+            <input type="text" [formControl]="secondnameControl" name="second" [(ngModel)]="newUser.lastName" class="form-control" id="secondname"
                    placeholder="Second Name">
           </div>
           <h5>Email address</h5>
           <div class="input-group-prepend">
-            <input type="email" [formControl]="emailControl" name="email" class="form-control" id="email" aria-describedby="emailHelp"
+            <input type="email" [formControl]="emailControl" name="email" [(ngModel)]="newUser.email" class="form-control" id="email" aria-describedby="emailHelp"
                    placeholder="email@email.com">
           </div>
           <h5>Password</h5>
           <div class="input-group-prepend">
-            <input type="password" [formControl]="passwordControl" name="password" id="password" class="form-control"
+            <input type="password" [formControl]="passwordControl" name="password" [(ngModel)]="newUser.password" id="password" class="form-control"
                    placeholder=" Password">
           </div>
           <h5>Birth Date</h5>
           <div class="input-group-prepend">
-            <input type="date" [formControl]="dateControl" name="bday" id="birthdate" class="form-control" data-ng-model="data.StartDate"  min="1940-01-01" max="2020-01-01">
+            <input type="date" [formControl]="dateControl" name="bday" [(ngModel)]="newUser.birthDate" id="birthdate" class="form-control" data-ng-model="data.StartDate"  min="1940-01-01" max="2020-01-01">
           </div>
           <h5>Mobile number</h5>
           <div class="input-group-prepend">
-            <input type="number" [formControl]="numberControl" name="number" class="form-control" id="number"   placeholder="+375(**)-***-**-**">
+            <input type="number" [formControl]="numberControl" name="number" [(ngModel)]="newUser.mobileNumber" class="form-control" id="number"   placeholder="+375*********">
 
           </div>
           <div class="input-group-prepend mx-auto">

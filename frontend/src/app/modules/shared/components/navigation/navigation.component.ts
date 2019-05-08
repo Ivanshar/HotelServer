@@ -17,7 +17,6 @@ export class NavigationComponent implements OnInit {
   }
 
   public onSubmit():void{
-    console.log(this.loginUser);
     this.auth.signIn(this.loginUser);
   }
 

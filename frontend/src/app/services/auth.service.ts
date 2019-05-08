@@ -32,7 +32,7 @@ export class AuthService {
   }
 
   public userAuth():Observable<UserModel>{
-    return this.http.get<UserModel>("/api/users/auth/user");
+    return this.http.get<UserModel>("/api/auth/user");
   }
 
   public signIn(authUser: UserModel):void{

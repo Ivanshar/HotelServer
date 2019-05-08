@@ -9,17 +9,17 @@ import {EventService} from "../../../../../services/event.service";
 })
 export class EventlistComponent implements OnInit {
 
-  public users: EventModel[];
+  public events: EventModel[];
 
-  constructor(private userService: EventService) { }
+  constructor(private eventService: EventService) { }
 
   ngOnInit() {
     this.loadData();
   }
 
   private loadData():void{
-    this.userService.getAllEvents().subscribe(data=>{
-      this.users = data as EventModel[];
+    this.eventService.getAllEvents().subscribe(data=>{
+      this.events = data as EventModel[];
 
     })
   }

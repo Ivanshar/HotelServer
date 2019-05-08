@@ -25,7 +25,7 @@ import {FormsModule} from "@angular/forms";
     FooterComponent,
     NavigationComponent,
     AdminheaderComponent,
-    PaymantmodalComponent
+    PaymantmodalComponent,
     AdminheaderComponent
   ],
   providers:[

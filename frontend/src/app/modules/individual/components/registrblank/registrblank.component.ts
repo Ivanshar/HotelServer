@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import {UserModel} from "../../../../models/user-model";
@@ -22,7 +22,7 @@ export class RegistrblankComponent implements OnInit {
   emailControl: FormControl;
 
   public newUser: UserModel = new UserModel();
-  public isAdmin: boolean = false;
+  @Input() public isAdmin: boolean = false;
   public userExistsByEmail: boolean = false;
   public userExistsByLogin: boolean = false;
 
