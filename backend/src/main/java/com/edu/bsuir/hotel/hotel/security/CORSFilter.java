@@ -1,5 +1,7 @@
 package com.edu.bsuir.hotel.hotel.security;
 
+import org.springframework.stereotype.Component;
+
 import java.io.IOException;
 
 import javax.servlet.Filter;
@@ -11,7 +13,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+@Component
 public class CORSFilter implements Filter {
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
