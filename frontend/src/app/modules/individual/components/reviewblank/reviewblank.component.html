@@ -2,11 +2,17 @@
   <div class="container">
     <div class="col-md-10 contact-form">
       <h3>Send a <span>Review</span></h3>
-      <form action="" method="post">
-        <input type="text" [formControl]="nameControl" class="form-control inputtext" name="Name" placeholder="Name" required="">
-        <input type="email" [formControl]="emailControl" class="form-control inputtext" name="Email" placeholder="Email" required="">
-        <textarea class="form-control" [formControl]="rewiewControl" name="Message" placeholder="Review Here...." required=""></textarea>
-        <input type="submit"  class="submit-btn inputtext" value="Submit">
+      <label for="adult">Оценка</label>
+      <form action="" method="post" (ngSubmit)="comment()">
+        <select id="adult" class="form-control form-control-lg col-3" name="child" [(ngModel)]="review.mark">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option selected>5</option>
+        </select>
+        <textarea class="form-control" name="Message" placeholder="Комментарий..." required="" [(ngModel)]="review.comment"></textarea>
+        <input type="submit" class="submit-btn inputtext" value="Отправить">
       </form>
     </div>
     <div class="clearfix"></div>

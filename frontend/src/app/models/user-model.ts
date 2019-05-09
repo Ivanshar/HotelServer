@@ -9,6 +9,8 @@ export class UserModel {
   logoUrl: string;
   birthDate: Date;
   role: number;
+  blocked: number;
+  discount: number;
 
   static cloneBase(user: UserModel):UserModel{
     const cloneUserModel: UserModel = new UserModel();
@@ -22,6 +24,8 @@ export class UserModel {
     cloneUserModel.mobileNumber = user.mobileNumber;
     cloneUserModel.birthDate = user.birthDate;
     cloneUserModel.role = user.role;
+    cloneUserModel.blocked = user.blocked;
+    cloneUserModel.discount = user.discount;
     return cloneUserModel;
   }
 }
@@ -35,6 +39,8 @@ export class UserSafeModel{
   logoUrl: string;
   birthDate: Date;
   role: number;
+  blocked: number;
+  discount: number;
 
   static cloneBase(user: UserSafeModel):UserSafeModel{
     const cloneUserModel: UserSafeModel = new UserSafeModel();
@@ -46,6 +52,8 @@ export class UserSafeModel{
     cloneUserModel.mobileNumber = user.mobileNumber;
     cloneUserModel.birthDate = user.birthDate;
     cloneUserModel.role = user.role;
+    cloneUserModel.blocked = user.blocked;
+    cloneUserModel.discount = user.discount;
     return cloneUserModel;
   }
 }

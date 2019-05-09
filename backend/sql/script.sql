@@ -27,6 +27,8 @@ CREATE TABLE IF NOT EXISTS `hoteldb`.`user` (
   `last_name` VARCHAR(45) NOT NULL,
   `mobile_number` VARCHAR(20) NOT NULL,
   `logo_url` VARCHAR(45) NOT NULL,
+  `blocked` TINYINT(1) NOT NULL DEFAULT 0,
+  `discount` INT NOT NULL DEFAULT 0,
   `birth_date` DATE NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;

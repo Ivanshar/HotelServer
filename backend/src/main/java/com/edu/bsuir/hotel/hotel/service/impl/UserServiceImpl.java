@@ -1,6 +1,5 @@
 package com.edu.bsuir.hotel.hotel.service.impl;
 
-import com.edu.bsuir.hotel.hotel.converter.UserToUserDTO;
 import com.edu.bsuir.hotel.hotel.entity.UserEntity;
 import com.edu.bsuir.hotel.hotel.repository.UserRepository;
 import com.edu.bsuir.hotel.hotel.service.UserService;
