@@ -11,20 +11,28 @@ import {UserService} from "../../../../../services/user.service";
 export class RoomlistComponent implements OnInit {
   public rooms: RoomModel[];
 
-  constructor(private userService: RoomService) { }
+  constructor(private roomService: RoomService) { }
 
   ngOnInit() {
     this.loadData();
   }
 
   private loadData():void{
-    this.userService.getAllRooms().subscribe(data=>{
+    this.roomService.getAllRooms().subscribe(data=>{
       this.rooms = data as RoomModel[];
 
     })
   }
 
   public deactivate(id: string):void{
+    this.roomService.deactivate(id).subscribe(()=>{
+      setTimeout(location.reload.bind(location), 200);
+    })
+  }
 
+  public activate(id: string):void{
+    this.roomService.activate(id).subscribe(()=>{
+      setTimeout(location.reload.bind(location), 200);
+    })
   }
 }

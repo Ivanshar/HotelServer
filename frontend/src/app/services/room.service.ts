@@ -26,4 +26,12 @@ export class RoomService {
     return this.http.post<RoomModel>("/api/rooms/req", room);
   }
 
+  public deactivate(id: string): Observable<any>{
+    return this.http.get("/api/rooms/deactive/id/"+id);
+  }
+
+  public activate(id: string): Observable<any>{
+    return this.http.get("/api/rooms/active/id/"+id);
+  }
+
 }

@@ -11,6 +11,7 @@
           <th><h2>Максимальное количество человек</h2></th>
           <th><h2>Цена</h2></th>
           <th><h2>Активна</h2></th>
+          <th><h2>Действие</h2></th>
         </tr>
 
         <tr *ngFor="let room of rooms; let i = index">
@@ -30,7 +31,11 @@
             <h5>{{room.price}}</h5>
           </th>
           <th>
-            <h5>{{room.isActive == 1? "Yes":"No"}}</h5>
+            <h5>{{room.isActive == 1? "Да":"Нет"}}</h5>
+          </th>
+          <th>
+            <button class="btn btn-danger" *ngIf="room.isActive == 0" (click)="activate(room.id)">Активировать</button>
+            <button class="btn btn-danger" *ngIf="room.isActive != 0" (click)="deactivate(room.id)">Деактивировать</button>
           </th>
         </tr>
 

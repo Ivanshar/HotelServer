@@ -47,4 +47,20 @@ public class RoomController {
             return ResponseEntity.ok(null);
         }
     }
+
+    @GetMapping("/deactive/id/{id}")
+    public RoomEntity deactivate(@PathVariable int id){
+        Optional<RoomEntity> room = roomService.findById(id);
+        RoomEntity entity = room.get();
+        entity.setIsActive((byte)0);
+        return roomService.save(entity);
+    }
+
+    @GetMapping("/active/id/{id}")
+    public RoomEntity activate(@PathVariable int id){
+        Optional<RoomEntity> room = roomService.findById(id);
+        RoomEntity entity = room.get();
+        entity.setIsActive((byte)1);
+        return roomService.save(entity);
+    }
 }
