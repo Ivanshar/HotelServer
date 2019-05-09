@@ -24,6 +24,11 @@ public class RoomController {
         return roomService.save(roomEntity);
     }
 
+    @GetMapping("/list")
+    public List<RoomEntity> getAllRooms(){
+        return roomService.findAll();
+    }
+
     @PostMapping("/req")
     public ResponseEntity<RoomEntity> getRequired(@RequestBody RoomEntity roomEntity){
         List<RoomEntity> rooms = roomService.requiredRooms(roomEntity);

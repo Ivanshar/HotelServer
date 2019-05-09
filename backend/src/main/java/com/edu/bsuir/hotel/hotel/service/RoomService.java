@@ -8,4 +8,5 @@ public interface RoomService {
     List<RoomEntity> findAllByRoomType(String roomType);
     RoomEntity save(RoomEntity roomEntity);
     List<RoomEntity> requiredRooms(RoomEntity roomEntity);
+    List<RoomEntity> findAll();
 }

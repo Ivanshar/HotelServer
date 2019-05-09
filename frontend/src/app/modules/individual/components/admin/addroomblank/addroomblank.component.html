@@ -24,19 +24,19 @@
             <input type="number" class="form-control col-2" id="inputNumPeople" name="NumPeople" placeholder="1" min="0" max="10" [(ngModel)]="newRoom.maxPersons">
           </div>
           <div class="custom-control custom-radio">
-            <input type="checkbox" class="custom-control-input btn-danger" id="TV" name="RadiosTV" [(ngModel)]="newRoom.hasTv" value="false">
+            <input type="checkbox" class="custom-control-input btn-danger" id="TV" name="RadiosTV" [(ngModel)]="hasTv" value="false">
             <label class="custom-control-label" for="TV">TV</label>
           </div>
           <div class="custom-control custom-radio">
-            <input type="checkbox" class="custom-control-input btn-danger" id="fridge" name="RadiosFridge" [(ngModel)]="newRoom.hasFridge" value="false">
+            <input type="checkbox" class="custom-control-input btn-danger" id="fridge" name="RadiosFridge" [(ngModel)]="hasFridge" value="false">
             <label class="custom-control-label" for="fridge">Fridge</label>
           </div>
           <div class="custom-control custom-radio">
-            <input type="checkbox" class="custom-control-input btn-danger" id="babyBad" name="RadiosBad" [(ngModel)]="newRoom.hasBabyBed" value="false">
+            <input type="checkbox" class="custom-control-input btn-danger" id="babyBad" name="RadiosBad" [(ngModel)]="hasBabyBed" value="false">
             <label class="custom-control-label" for="babyBad">Baby bad</label>
           </div>
           <div class="custom-control custom-radio">
-            <input type="checkbox" class="custom-control-input btn-danger" id="bath" name="Bath" [(ngModel)]="newRoom.hasBath" value="false">
+            <input type="checkbox" class="custom-control-input btn-danger" id="bath" name="Bath" [(ngModel)]="hasBath" value="false">
             <label class="custom-control-label" for="bath">Bath</label>
           </div>
           <div class="form-group input-price">
@@ -45,7 +45,7 @@
             <h3>&nbsp; $</h3>
           </div>
           <div class="custom-control custom-radio" style="padding-top: 20px">
-            <input type="checkbox" class="custom-control-input btn-danger" id="active" name="Active" [(ngModel)]="newRoom.isActive" value="false">
+            <input type="checkbox" class="custom-control-input btn-danger" id="active" name="Active" [(ngModel)]="isActive" value="false">
             <label class="custom-control-label" for="active">ACTIVE</label>
           </div>
 

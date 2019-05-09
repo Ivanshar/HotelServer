@@ -28,4 +28,9 @@ public class RoomServiceImpl implements RoomService {
         return roomRepository.findAllByHasBabyBedAndHasTvAndHasBathAndHasFridgeAndMaxPersonsGreaterThanAndIsActive(roomEntity.getHasBabyBed(),
                 roomEntity.getHasTv(), roomEntity.getHasBath(), roomEntity.getHasFridge(), roomEntity.getMaxPersons(), (byte)1);
     }
+
+    @Override
+    public List<RoomEntity> findAll() {
+        return (List<RoomEntity>) roomRepository.findAll();
+    }
 }

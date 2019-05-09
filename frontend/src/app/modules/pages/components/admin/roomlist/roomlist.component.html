@@ -12,11 +12,11 @@
           <th><h2>Number</h2></th>
           <th><h2>Type</h2></th>
           <th><h2>Max person</h2></th>
-          <th><h2>Prise</h2></th>
+          <th><h2>Price</h2></th>
           <th><h2>Active</h2></th>
         </tr>
 
-        <tr *ngFor="let user of users; let i = index">
+        <tr *ngFor="let room of rooms; let i = index">
           <th>
             <h5>{{i+1}}</h5>
           </th>
@@ -33,7 +33,7 @@
             <h5>{{room.price}}</h5>
           </th>
           <th>
-            <h5>{{room.isActive}}</h5>
+            <h5>{{room.isActive == 1? "Yes":"No"}}</h5>
           </th>
         </tr>
 
