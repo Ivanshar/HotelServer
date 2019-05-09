@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {EventModel} from "../../../../models/event-model";
 import {EventService} from "../../../../services/event.service";
+import file from "../../../../../assets/imgSrc.json"
 
 @Component({
   selector: 'app-eventcards',
@@ -10,6 +11,8 @@ import {EventService} from "../../../../services/event.service";
 export class EventcardsComponent implements OnInit {
 
   public events: EventModel[];
+
+  public imgLink = file;
 
   constructor(private eventService: EventService) { }
 

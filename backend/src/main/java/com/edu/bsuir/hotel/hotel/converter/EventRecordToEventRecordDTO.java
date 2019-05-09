@@ -14,8 +14,7 @@ public class EventRecordToEventRecordDTO implements Converter<EventRecordEntity,
     public EventRecordDTO convert(EventRecordEntity eventEntity) {
         EventRecordDTO eventDTO = new EventRecordDTO();
         eventDTO.setId(eventEntity.getId());
-        eventDTO.setTimeFrom(eventEntity.getTimeFrom());
-        eventDTO.setTimeTo(eventEntity.getTimeTo());
+        eventDTO.setPersonCount(eventEntity.getPersonCount());
         eventDTO.setUser(userToUserDTO.convert(eventEntity.getUser()));
         eventDTO.setEvent(eventEntity.getEvent());
         return eventDTO;

@@ -11,12 +11,17 @@ export class EventService {
   constructor(private http: HttpClient) { }
 
   public postAllEvent(event: EventModel):Observable<any>{
-    return this.http.post("/api/event", event );
+    return this.http.post("/api/events", event );
   }
 
   public getAllEvents():Observable<EventModel[]>{
-    return this.http.get<EventModel[]>("/api/event/list");
+    return this.http.get<EventModel[]>("/api/events/list");
   }
 
+  saveEventImage(image: File, name: string): any{
+    let formdata = new FormData();
+    formdata.append("image", image, name);
+    return this.http.post("/api/events/image", formdata);
+  }
 
 }

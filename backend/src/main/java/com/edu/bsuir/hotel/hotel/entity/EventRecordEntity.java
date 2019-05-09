@@ -1,15 +1,13 @@
 package com.edu.bsuir.hotel.hotel.entity;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
 @Table(name = "event_record", schema = "hoteldb", catalog = "")
 public class EventRecordEntity {
     private int id;
-    private Timestamp timeFrom;
-    private Timestamp timeTo;
+    private int personCount;
     private UserEntity user;
     private EventEntity event;
 
@@ -24,23 +22,13 @@ public class EventRecordEntity {
     }
 
     @Basic
-    @Column(name = "time_from")
-    public Timestamp getTimeFrom() {
-        return timeFrom;
+    @Column(name = "person_count")
+    public int getPersonCount() {
+        return personCount;
     }
 
-    public void setTimeFrom(Timestamp timeFrom) {
-        this.timeFrom = timeFrom;
-    }
-
-    @Basic
-    @Column(name = "time_to")
-    public Timestamp getTimeTo() {
-        return timeTo;
-    }
-
-    public void setTimeTo(Timestamp timeTo) {
-        this.timeTo = timeTo;
+    public void setPersonCount(int personCount) {
+        this.personCount = personCount;
     }
 
     @Override
@@ -49,13 +37,12 @@ public class EventRecordEntity {
         if (o == null || getClass() != o.getClass()) return false;
         EventRecordEntity that = (EventRecordEntity) o;
         return id == that.id &&
-                Objects.equals(timeFrom, that.timeFrom) &&
-                Objects.equals(timeTo, that.timeTo);
+                personCount == that.personCount;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, timeFrom, timeTo);
+        return Objects.hash(id, personCount);
     }
 
     @ManyToOne

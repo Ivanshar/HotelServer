@@ -1,15 +1,14 @@
 <div *ngFor="let event of events; let i = index">
 <div class="card text-center">
   <div class="card-header">
-    <img src={{event.logoUrl}}  alt="..." >
+    <img src="{{imgLink.src}}/api/events/image/{{event.logoUrl}}"  alt="..." >
   </div>
   <div class="card-body">
     <h5 class="card-title">{{event.name}}</h5>
     <p class="card-text">{{event.description}}</p>
+    <p class="card-text">Цена: {{event.price}}$</p>
+    <p class="card-text">С: {{event.dateTimeStart | date:'short'}} По: {{event.dateTimeEnd | date:'short'}}</p>
     <button class="btn-lg  btn-danger"  data-toggle="modal" data-target="#toUpModal">Записаться</button>
-  </div>
-  <div class="card-footer text-muted">
-    {{event.dateTimeStart - event.dateTimeEnd}}
   </div>
 </div>
 </div>

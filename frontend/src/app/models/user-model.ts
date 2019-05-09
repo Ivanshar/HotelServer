@@ -6,7 +6,6 @@ export class UserModel {
   firstName: string;
   lastName: string;
   mobileNumber: string;
-  logoUrl: string;
   birthDate: Date;
   role: number;
   blocked: number;
@@ -18,7 +17,6 @@ export class UserModel {
     cloneUserModel.email = user.email;
     cloneUserModel.login = user.login;
     cloneUserModel.password = user.password;
-    cloneUserModel.logoUrl = user.logoUrl;
     cloneUserModel.firstName = user.firstName;
     cloneUserModel.lastName = user.lastName;
     cloneUserModel.mobileNumber = user.mobileNumber;
@@ -36,7 +34,6 @@ export class UserSafeModel{
   firstName: string;
   lastName: string;
   mobileNumber: string;
-  logoUrl: string;
   birthDate: Date;
   role: number;
   blocked: number;
@@ -46,7 +43,6 @@ export class UserSafeModel{
     const cloneUserModel: UserSafeModel = new UserSafeModel();
     cloneUserModel.id = user.id;
     cloneUserModel.email = user.email;
-    cloneUserModel.logoUrl = user.logoUrl;
     cloneUserModel.firstName = user.firstName;
     cloneUserModel.lastName = user.lastName;
     cloneUserModel.mobileNumber = user.mobileNumber;

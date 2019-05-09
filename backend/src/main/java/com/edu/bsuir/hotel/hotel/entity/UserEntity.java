@@ -15,7 +15,6 @@ public class UserEntity {
     private String firstName;
     private String lastName;
     private String mobileNumber;
-    private String logoUrl;
     private byte blocked;
     private int discount;
     private Date birthDate;
@@ -101,16 +100,6 @@ public class UserEntity {
     }
 
     @Basic
-    @Column(name = "logo_url")
-    public String getLogoUrl() {
-        return logoUrl;
-    }
-
-    public void setLogoUrl(String logoUrl) {
-        this.logoUrl = logoUrl;
-    }
-
-    @Basic
     @Column(name = "blocked")
     public byte getBlocked() {
         return blocked;
@@ -155,12 +144,11 @@ public class UserEntity {
                 Objects.equals(firstName, that.firstName) &&
                 Objects.equals(lastName, that.lastName) &&
                 Objects.equals(mobileNumber, that.mobileNumber) &&
-                Objects.equals(logoUrl, that.logoUrl) &&
                 Objects.equals(birthDate, that.birthDate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, role, email, login, password, firstName, lastName, mobileNumber, logoUrl, blocked, discount, birthDate);
+        return Objects.hash(id, role, email, login, password, firstName, lastName, mobileNumber, blocked, discount, birthDate);
     }
 }

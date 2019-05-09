@@ -13,7 +13,6 @@ public class UserToUserDTO implements Converter<UserEntity, UserDTO> {
         UserDTO userDTO = new UserDTO();
         userDTO.setId(user.getId());
         userDTO.setEmail(user.getEmail());
-        userDTO.setLogoUrl(user.getLogoUrl());
         userDTO.setFirstName(user.getFirstName());
         userDTO.setLastName(user.getLastName());
         userDTO.setRole(user.getRole());

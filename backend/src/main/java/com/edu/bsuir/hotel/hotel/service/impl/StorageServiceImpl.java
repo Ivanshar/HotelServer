@@ -17,9 +17,9 @@ public class StorageServiceImpl implements StorageService {
     private Path rootLocation = Paths.get("backend/src/main/resources/images");
 
     @Override
-    public boolean storeUserImage(MultipartFile file) {
+    public boolean storeEventImage(MultipartFile file) {
         try{
-            Path productPath = Paths.get(rootLocation+"/users/"+file.getOriginalFilename()).toAbsolutePath();
+            Path productPath = Paths.get(rootLocation+"/events/"+file.getOriginalFilename()).toAbsolutePath();
             Files.copy(file.getInputStream(), productPath);
             return true;
         } catch (IOException e) {
@@ -29,9 +29,9 @@ public class StorageServiceImpl implements StorageService {
     }
 
     @Override
-    public Resource getUserImage(String name) {
+    public Resource getEventImage(String name) {
         try {
-            Path file = Paths.get(rootLocation+"/users/"+name);
+            Path file = Paths.get(rootLocation+"/events/"+name);
             Resource resource = new UrlResource(file.toUri());
             if (resource.exists() || resource.isReadable()) {
                 return resource;

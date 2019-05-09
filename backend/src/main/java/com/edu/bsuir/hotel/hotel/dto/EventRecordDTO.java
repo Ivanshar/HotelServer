@@ -2,22 +2,18 @@ package com.edu.bsuir.hotel.hotel.dto;
 
 import com.edu.bsuir.hotel.hotel.entity.EventEntity;
 
-import java.sql.Timestamp;
-
 public class EventRecordDTO {
     private int id;
-    private Timestamp timeFrom;
-    private Timestamp timeTo;
+    private int personCount;
     private UserDTO user;
     private EventEntity event;
 
     public EventRecordDTO() {
     }
 
-    public EventRecordDTO(int id, Timestamp timeFrom, Timestamp timeTo, UserDTO user, EventEntity event) {
+    public EventRecordDTO(int id, int personCount, UserDTO user, EventEntity event) {
         this.id = id;
-        this.timeFrom = timeFrom;
-        this.timeTo = timeTo;
+        this.personCount = personCount;
         this.user = user;
         this.event = event;
     }
@@ -30,20 +26,12 @@ public class EventRecordDTO {
         this.id = id;
     }
 
-    public Timestamp getTimeFrom() {
-        return timeFrom;
+    public int getPersonCount() {
+        return personCount;
     }
 
-    public void setTimeFrom(Timestamp timeFrom) {
-        this.timeFrom = timeFrom;
-    }
-
-    public Timestamp getTimeTo() {
-        return timeTo;
-    }
-
-    public void setTimeTo(Timestamp timeTo) {
-        this.timeTo = timeTo;
+    public void setPersonCount(int personCount) {
+        this.personCount = personCount;
     }
 
     public UserDTO getUser() {
