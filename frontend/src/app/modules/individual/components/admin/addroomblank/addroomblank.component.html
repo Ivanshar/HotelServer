@@ -11,6 +11,10 @@
       </div>
       <div class="col-sm">
         <form (ngSubmit)="regNewRoom()" action="" method="post" name="registration" class="regblank" >
+          <div class="form-group input-price">
+            <label for="roomNumber">№:  &nbsp; </label>
+            <input type="number" class="form-control col-2" id="roomNumber" name="Number" placeholder="1" min="0" max="10000" [(ngModel)]="newRoom.number">
+          </div>
           <label for="child">Type of room</label>
           <select id="child" class="form-control form-control-lg col-6" name="roomType" [(ngModel)]="newRoom.roomType">
             <option>Classic Room</option>
@@ -40,8 +44,8 @@
             <label class="custom-control-label" for="bath">Bath</label>
           </div>
           <div class="form-group input-price">
-            <label for="inputPriceOfEvent">Price:  &nbsp; </label>
-            <input type="number" class="form-control col-2" id="inputPriceOfEvent" name="Price" placeholder="1" min="0" max="10000" [(ngModel)]="newRoom.price">
+            <label for="inputPriceOfRoom">Price:  &nbsp; </label>
+            <input type="number" class="form-control col-2" id="inputPriceOfRoom" name="Price" placeholder="1" min="0" max="10000" [(ngModel)]="newRoom.price">
             <h3>&nbsp; $</h3>
           </div>
           <div class="custom-control custom-radio" style="padding-top: 20px">
