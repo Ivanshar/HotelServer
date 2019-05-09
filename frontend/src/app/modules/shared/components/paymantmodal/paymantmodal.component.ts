@@ -24,7 +24,6 @@ export class PaymantmodalComponent implements OnInit {
 
   public makePayment():void{
     this.sub.user = this.auth.user;
-    console.log(this.sub);
     this.reservationService.postReservation(this.sub).subscribe(()=>{
       this.router.navigate(['']);
       setTimeout(location.reload.bind(location), 200);

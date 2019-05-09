@@ -19,6 +19,8 @@ public class UserToUserDTO implements Converter<UserEntity, UserDTO> {
         userDTO.setRole(user.getRole());
         userDTO.setMobileNumber(user.getMobileNumber());
         userDTO.setBirthDate(user.getBirthDate());
+        userDTO.setBlocked(user.getBlocked());
+        userDTO.setDiscount(user.getDiscount());
         return userDTO;
     }
 

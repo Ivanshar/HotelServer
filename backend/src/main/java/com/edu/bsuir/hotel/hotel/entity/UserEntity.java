@@ -16,6 +16,8 @@ public class UserEntity {
     private String lastName;
     private String mobileNumber;
     private String logoUrl;
+    private byte blocked;
+    private int discount;
     private Date birthDate;
 
     @Id
@@ -109,6 +111,26 @@ public class UserEntity {
     }
 
     @Basic
+    @Column(name = "blocked")
+    public byte getBlocked() {
+        return blocked;
+    }
+
+    public void setBlocked(byte blocked) {
+        this.blocked = blocked;
+    }
+
+    @Basic
+    @Column(name = "discount")
+    public int getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(int discount) {
+        this.discount = discount;
+    }
+
+    @Basic
     @Column(name = "birth_date")
     public Date getBirthDate() {
         return birthDate;
@@ -125,6 +147,8 @@ public class UserEntity {
         UserEntity that = (UserEntity) o;
         return id == that.id &&
                 role == that.role &&
+                blocked == that.blocked &&
+                discount == that.discount &&
                 Objects.equals(email, that.email) &&
                 Objects.equals(login, that.login) &&
                 Objects.equals(password, that.password) &&
@@ -137,6 +161,6 @@ public class UserEntity {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, role, email, login, password, firstName, lastName, mobileNumber, logoUrl, birthDate);
+        return Objects.hash(id, role, email, login, password, firstName, lastName, mobileNumber, logoUrl, blocked, discount, birthDate);
     }
 }

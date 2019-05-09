@@ -11,11 +11,13 @@ public class UserDTO {
     private String logoUrl;
     private Date birthDate;
     private byte role;
+    private byte blocked;
+    private int discount;
 
     public UserDTO() {
     }
 
-    public UserDTO(int id, String email, String firstName, String lastName, String mobileNumber, String logoUrl, Date birthDate, byte role) {
+    public UserDTO(int id, String email, String firstName, String lastName, String mobileNumber, String logoUrl, Date birthDate, byte role, byte blocked, int discount) {
         this.id = id;
         this.email = email;
         this.firstName = firstName;
@@ -24,6 +26,8 @@ public class UserDTO {
         this.logoUrl = logoUrl;
         this.birthDate = birthDate;
         this.role = role;
+        this.blocked = blocked;
+        this.discount = discount;
     }
 
     public int getId() {
@@ -89,4 +93,21 @@ public class UserDTO {
     public void setRole(byte role) {
         this.role = role;
     }
+
+    public byte getBlocked() {
+        return blocked;
+    }
+
+    public void setBlocked(byte blocked) {
+        this.blocked = blocked;
+    }
+
+    public int getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(int discount) {
+        this.discount = discount;
+    }
 }
+

@@ -4,6 +4,7 @@ import {ReservationService} from "../../../../services/reservation.service";
 import {AuthService} from "../../../../services/auth.service";
 import {RoomService} from "../../../../services/room.service";
 import {RoomModel} from "../../../../models/room-model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-bookroomcontent',
@@ -22,6 +23,8 @@ export class BookroomcontentComponent implements OnInit {
   public hasFridge:boolean = false;
   public hasTv:boolean = false;
 
+  public roomNotExists: boolean;
+
 
   public newReservation: ReservationModel = new ReservationModel();
 
@@ -29,12 +32,14 @@ export class BookroomcontentComponent implements OnInit {
 
   constructor( private reservationService: ReservationService,
                private roomService: RoomService,
-               public auth: AuthService) { }
+               public auth: AuthService,
+               private router: Router) { }
 
   ngOnInit() {
   }
 
   public makeReservation():void{
+    this.roomNotExists = false;
     this.newReservation.personCount = Number(this.adult) + Number(this.child);
     this.requiredRoom.maxPersons = this.newReservation.personCount;
     if (!this.hasBath) {
@@ -61,12 +66,22 @@ export class BookroomcontentComponent implements OnInit {
 
     this.roomService.getRequiredRoom(this.requiredRoom).subscribe(data=>{
       if(data != null){
-        console.log(data);
         this.newReservation.room = data;
-        this.priceAll = this.date_diff_indays(this.newReservation.dateFrom, this.newReservation.dateTo) * this.newReservation.room.price
+        this.priceAll = this.date_diff_indays(this.newReservation.dateFrom, this.newReservation.dateTo) * this.newReservation.room.price *
+          (1- this.auth.user.discount/100);
+      }else {
+        this.roomNotExists = true;
       }
     })
    // this.reservationService.postReservation(this.newReservation);
+  }
+
+  public makePayment():void{
+    this.newReservation.user = this.auth.user;
+    this.reservationService.postReservation(this.newReservation).subscribe(()=>{
+      this.router.navigate(['']);
+      setTimeout(location.reload.bind(location), 200);
+    })
   }
 
   public date_diff_indays(date1, date2):any {
