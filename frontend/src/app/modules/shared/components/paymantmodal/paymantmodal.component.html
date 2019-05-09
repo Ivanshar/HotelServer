@@ -26,11 +26,11 @@
         <div class="row justify-content-center">
           <div class="col-5">
             <label for="cardSum">Sum</label>
-            <input type="text" class="form-control" id="cardSum">
+            <input type="text" class="form-control" id="cardSum" disabled value="{{price}}">
           </div>
         </div>
         <div class="d-flex justify-content-between mr-0 mt-3">
-          <button type="submit" class="btn btn-primary col-2">Add</button>
+          <button type="submit" class="btn btn-primary col-2" (click)="makePayment()">Add</button>
           <button type="button" class="btn btn-danger col-2" data-dismiss="modal">Close</button>
         </div>
       </form>

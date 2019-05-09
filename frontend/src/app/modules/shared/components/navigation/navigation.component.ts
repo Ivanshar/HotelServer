@@ -15,11 +15,13 @@ export class NavigationComponent implements OnInit {
   constructor(private auth: AuthService) { }
 
   ngOnInit() {
+    if(this.auth.user != null){
+      if(this.auth.user.role == 1) this.isAdmin = true;
+    }
   }
 
   public onSubmit():void{
     this.auth.signIn(this.loginUser);
-    if(this.auth.user.role == 1) this.isAdmin = true;
   }
 
   public logOut():void{

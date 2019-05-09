@@ -8,10 +8,6 @@ export class ReservationModel {
   personCount: number;
   user: UserSafeModel;
   room: RoomModel;
-  hasBabyBed: boolean;
-  hasTv: boolean;
-  hasBath: boolean;
-  hasFridge: boolean;
 
   static cloneBase(reserv: ReservationModel): ReservationModel{
     const reservClone: ReservationModel = new ReservationModel();
@@ -21,10 +17,6 @@ export class ReservationModel {
     reservClone.personCount = reserv.personCount;
     reservClone.user = reserv.user;
     reservClone.room = reserv.room;
-    reservClone.hasBabyBed = reserv.hasBabyBed;
-    reservClone.hasTv = reserv.hasTv;
-    reservClone.hasBath = reserv.hasBath;
-    reservClone.hasFridge = reserv.hasFridge;
     return reservClone;
   }
 

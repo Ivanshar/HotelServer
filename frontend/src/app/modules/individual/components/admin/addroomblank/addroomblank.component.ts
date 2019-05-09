@@ -19,19 +19,24 @@ export class AddroomblankComponent implements OnInit {
   public regNewRoom():void{
 
     if (!this.newRoom.hasBath) {
-      this.newRoom.hasBath = false;
+      this.newRoom.hasBath = 0;
+    }else {
+      this.newRoom.hasBath = 1;
     }
     if (!this.newRoom.hasBabyBed) {
-      this.newRoom.hasBabyBed = false;
+      this.newRoom.hasBabyBed = 0;
+    }else {
+      this.newRoom.hasBabyBed = 1;
     }
     if (!this.newRoom.hasFridge) {
-      this.newRoom.hasFridge = false;
+      this.newRoom.hasFridge = 0;
+    }else {
+      this.newRoom.hasFridge = 1;
     }
     if (!this.newRoom.hasTv) {
-      this.newRoom.hasTv = false;
-    }
-    if (!this.newRoom.isActive) {
-      this.newRoom.isActive = false;
+      this.newRoom.hasTv = 0;
+    }else {
+      this.newRoom.hasTv = 1;
     }
     console.log(this.newRoom);
     this.roomService.postAllRoom(this.newRoom);

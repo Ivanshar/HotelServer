@@ -1,13 +1,13 @@
 export class RoomModel {
   id: string;
-  price: string;
+  price: number;
   roomType: string;
-  maxPersons: string;
-  isActive: boolean;
-  hasBabyBed: boolean;
-  hasTv: boolean;
-  hasBath: boolean;
-  hasFridge: boolean;
+  maxPersons: number;
+  isActive: number;
+  hasBabyBed: number;
+  hasTv: number;
+  hasBath: number;
+  hasFridge: number;
 
   static cloneBase(room: RoomModel): RoomModel{
     const cloneRoom: RoomModel = new RoomModel();

@@ -28,6 +28,7 @@ import {AuthService} from "../../services/auth.service";
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {AuthInterceptorService} from "../../services/auth-interceptor.service";
 import {UserService} from "../../services/user.service";
+import {SharedModule} from "../shared/shared.module";
 
 @NgModule({
   declarations: [FooterComponent, CarouselComponent, ServiceComponent, GalleryComponent, ResortComponent,
@@ -41,7 +42,8 @@ import {UserService} from "../../services/user.service";
     CommonModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ],exports:[
     CarouselComponent,
     ServiceComponent,

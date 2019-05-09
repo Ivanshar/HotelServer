@@ -10,11 +10,11 @@ export class ReservationService {
   constructor(private http: HttpClient) { }
 
   public postReservation(reservation: ReservationModel):Observable<any>{
-    return this.http.post("/api/reservation", reservation );
+    return this.http.post("/api/reservations", reservation );
   }
 
   public getAllReservations():Observable<ReservationModel[]>{
-    return this.http.get<ReservationModel[]>("/api/reservation/list");
+    return this.http.get<ReservationModel[]>("/api/reservations/list");
   }
 
 }

@@ -22,4 +22,10 @@ public class RoomServiceImpl implements RoomService {
     public RoomEntity save(RoomEntity roomEntity) {
         return roomRepository.save(roomEntity);
     }
+
+    @Override
+    public List<RoomEntity> requiredRooms(RoomEntity roomEntity) {
+        return roomRepository.findAllByHasBabyBedAndHasTvAndHasBathAndHasFridgeAndMaxPersonsGreaterThanAndIsActive(roomEntity.getHasBabyBed(),
+                roomEntity.getHasTv(), roomEntity.getHasBath(), roomEntity.getHasFridge(), roomEntity.getMaxPersons(), (byte)1);
+    }
 }
