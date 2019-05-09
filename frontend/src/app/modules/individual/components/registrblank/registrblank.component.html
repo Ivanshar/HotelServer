@@ -5,86 +5,86 @@
         <section class="image-head-wrapper"
                  style="background-image: url('../../../../../assets/images/registration.jpg');">
           <div class="inner-wrapper">
-            <h1>Registration</h1>
+            <h1>Регистрация</h1>
           </div>
         </section>
       </div>
       <div class="col-sm">
         <form action="" method="post" name="registration" class="regblank" [formGroup]="registerForm"
               (ngSubmit)="onSubmit()">
-          <h5>Name</h5>
+          <h5>Имя Фамидия</h5>
           <div class="input-group-prepend">
             <input type="text" name="firstName" [(ngModel)]="newUser.firstName" class="form-control"
                    id="firstname" placeholder="First Name" autocomplete="off" formControlName="firstName"
                    [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
             <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-              <div *ngIf="f.firstName.errors.required">First Name is required</div>
+              <div *ngIf="f.firstName.errors.required">Определите Имя</div>
             </div>
             <input type="text" name="second" [(ngModel)]="newUser.lastName" class="form-control"
                    id="secondname" placeholder="Second Name" autocomplete="off"  formControlName="lastName"
                    [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }">
             <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-              <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+              <div *ngIf="f.lastName.errors.required">Определите Фамилию</div>
             </div>
           </div>
-          <h5>Login</h5>
+          <h5>Логин</h5>
           <div class="input-group-prepend">
             <input type="text" name="login" class="form-control" id="login" aria-describedby="emailHelp"
                    placeholder="login" (focusout)="ifExistsByLogin()"
                    [(ngModel)]="newUser.login" autocomplete="off"  formControlName="login"
                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }" >
-            <small *ngIf="userExistsByLogin" class="text-danger">This login is already exists</small>
+            <small *ngIf="userExistsByLogin" class="text-danger">Такой Логин уже определен</small>
             <div *ngIf="submitted && f.login.errors" class="invalid-feedback">
-              <div *ngIf="f.login.errors.required">Login is required</div>
+              <div *ngIf="f.login.errors.required">Определите Логин</div>
             </div>
           </div>
-          <h5>Email address</h5>
+          <h5>Email</h5>
           <div class="input-group-prepend">
             <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp"
                    (focusout)="ifExistsByEmail()" [(ngModel)]="newUser.email"
                    placeholder="email@email.com" autocomplete="off" (change)="userExistsByEmail = false"
                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }" formControlName="email">
-            <small *ngIf="userExistsByEmail" class="text-danger">This email is already exists</small>
+            <small *ngIf="userExistsByEmail" class="text-danger">Пользователь с таким email существует</small>
             <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-              <div *ngIf="f.email.errors.required">Email is required</div>
-              <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+              <div *ngIf="f.email.errors.required">Определите Email</div>
+              <div *ngIf="f.email.errors.email">Email должен соответствовать форме</div>
             </div>
 
           </div>
-          <h5>Password</h5>
+          <h5>Пароль</h5>
           <div class="input-group-prepend">
             <input type="password" name="password" [(ngModel)]="newUser.password" id="password"
                    class="form-control" placeholder=" Password" formControlName="password"
                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
             <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-              <div *ngIf="f.password.errors.required">Password is required</div>
-              <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+              <div *ngIf="f.password.errors.required">Определите пароль</div>
+              <div *ngIf="f.password.errors.minlength">Пароль должен состоять минимум из 6ти символов</div>
             </div>
           </div>
-          <h5>Birth Date</h5>
+          <h5>День рождения</h5>
           <div class="input-group-prepend">
             <input type="date" name="bday" [(ngModel)]="newUser.birthDate" id="birthdate" class="form-control"
                    data-ng-model="data.StartDate" min="1940-01-01" max="2020-01-01" formControlName="birthdate"
                    [ngClass]="{ 'is-invalid': submitted && f.birthdate.errors }">
             <div *ngIf="submitted && f.birthdate.errors" class="invalid-feedback">
-              <div *ngIf="f.birthdate.errors.required">Birth Date is required</div>
+              <div *ngIf="f.birthdate.errors.required">Определите Дату Рождения</div>
             </div>
           </div>
-          <h5>Mobile number</h5>
+          <h5>Номер телефона</h5>
           <div class="input-group-prepend">
             <input type="number" name="number" [(ngModel)]="newUser.mobileNumber" class="form-control"
                    id="number" placeholder="+375*********" formControlName="number"
             [ngClass]="{ 'is-invalid': submitted && f.number.errors }">
             <div *ngIf="submitted && f.number.errors" class="invalid-feedback">
-              <div *ngIf="f.number.errors.required">number is required</div>
-              <div *ngIf="f.number.errors.minlength">number must be at least 6 characters</div>
+              <div *ngIf="f.number.errors.required">nОпределите номер</div>
+              <div *ngIf="f.number.errors.minlength">Номер должен состоять минимум из 7ми символов</div>
             </div>
           </div>
           <div class="input-group-prepend mx-auto">
-            <p class="text-center">By signing up you accept our <a href="#">Terms Of Use</a></p>
+            <p class="text-center">Перед регистрацией вы соглашаетесь с <a href="#">Правилами</a></p>
           </div>
           <div class="text-center mx-auto">
-            <button type="submit" class=" btn btn-block mybtn btn-danger tx-tfm">Register</button>
+            <button type="submit" class=" btn btn-block mybtn btn-danger tx-tfm">Зарегистрироваться</button>
           </div>
         </form>
       </div>

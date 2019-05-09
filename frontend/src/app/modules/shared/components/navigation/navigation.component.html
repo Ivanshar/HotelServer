@@ -16,7 +16,7 @@
           <nav class="navbar navbar-default">
             <div class="navbar-header page-scroll">
               <button data-target=".navbar-ex1-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
-                <span class="sr-only">Toggle navigation</span>
+                <span class="sr-only">Переключить навигацию</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -67,25 +67,25 @@
             <h5>Email address</h5>
             <input type="text" name="login" class="form-control" id="inputLogin" #login="ngModel" placeholder="Login"
               [(ngModel)]="loginUser.login" required minlength="4" autocomplete="off">
-            <small [hidden]="login.valid || login.untouched" class="text-danger">Login is incorrect</small>
+            <small [hidden]="login.valid || login.untouched" class="text-danger">Логин не верный</small>
           </div>
           <div class="form-group">
             <h5>Password</h5>
             <input type="password" name="password" class="form-control" id="inputPassword4" placeholder="Enter password"
               [(ngModel)]="loginUser.password" required minlength="4" #password="ngModel">
-            <small [hidden]="password.valid || password.untouched" class="text-danger">Password is incorrect</small>
+            <small [hidden]="password.valid || password.untouched" class="text-danger">Пароль не верный</small>
           </div>
           <div class="col-md-12 text-center ">
-            <button type="submit" class=" btn btn-block mybtn btn-danger tx-tfm">Login</button>
+            <button type="submit" class=" btn btn-block mybtn btn-danger tx-tfm">Логин</button>
           </div>
           <div class="form-group">
-            <p class="text-center">Don't have account? <a  routerLink="/registration" class="btn btn-danger"  data-dismiss="modal">Sign up </a></p>
+            <p class="text-center">У вас нет аккаунта? <a  routerLink="/registration" class="btn btn-danger"  data-dismiss="modal">Зарегистрироваться</a></p>
           </div>
         </form>
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
       </div>
     </div>
   </div>
