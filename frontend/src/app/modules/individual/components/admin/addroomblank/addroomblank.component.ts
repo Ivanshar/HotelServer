@@ -17,6 +17,7 @@ export class AddroomblankComponent implements OnInit {
   public hasFridge: boolean;
   public hasTv: boolean;
   public isActive: boolean;
+  public alreadyExists: boolean;
 
   constructor( private roomService: RoomService,
                private router: Router) { }
@@ -52,8 +53,13 @@ export class AddroomblankComponent implements OnInit {
       this.newRoom.isActive = 1;
     }
     console.log(this.newRoom);
-    this.roomService.postAllRoom(this.newRoom).subscribe(()=>{
-      this.router.navigate(['/adminmenu']);
+    this.roomService.ifRoomExistsById(this.newRoom.id).subscribe(value=>{
+      this.alreadyExists = value;
+      if (!this.alreadyExists){
+        this.roomService.postAllRoom(this.newRoom).subscribe(()=>{
+          this.router.navigate(['/adminmenu']);
+        });
+      }
     });
   }
 }

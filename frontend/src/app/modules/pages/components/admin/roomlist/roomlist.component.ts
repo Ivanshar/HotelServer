@@ -23,4 +23,8 @@ export class RoomlistComponent implements OnInit {
 
     })
   }
+
+  public deactivate(id: string):void{
+
+  }
 }

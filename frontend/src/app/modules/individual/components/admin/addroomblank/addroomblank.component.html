@@ -13,7 +13,9 @@
         <form (ngSubmit)="regNewRoom()" action="" method="post" name="registration" class="regblank" >
           <div class="form-group input-price">
             <label for="roomNumber">№:  &nbsp; </label>
-            <input type="number" class="form-control col-2" id="roomNumber" name="Number" placeholder="1" min="0" max="10000" [(ngModel)]="newRoom.number">
+            <input type="number" class="form-control col-2" id="roomNumber" name="Number" placeholder="1" min="0" max="10000"
+                   [(ngModel)]="newRoom.id" (change)="alreadyExists = false">
+            <h5 class="text-danger" *ngIf="alreadyExists">Эта комната уже существует!</h5>
           </div>
           <label for="child">Тип комнаты</label>
           <select id="child" class="form-control form-control-lg col-7" name="roomType" [(ngModel)]="newRoom.roomType">

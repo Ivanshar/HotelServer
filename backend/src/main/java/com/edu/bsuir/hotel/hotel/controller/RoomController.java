@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/rooms")
@@ -22,6 +23,14 @@ public class RoomController {
     @PostMapping("")
     public RoomEntity saveRoom(@RequestBody RoomEntity roomEntity){
         return roomService.save(roomEntity);
+    }
+
+    @GetMapping("/id/{id}")
+    public ResponseEntity<Boolean> ifExists(@PathVariable int id){
+        Optional<RoomEntity> room = roomService.findById(id);
+
+        if(room.isPresent()) return ResponseEntity.ok(true);
+        else return ResponseEntity.ok(false);
     }
 
     @GetMapping("/list")

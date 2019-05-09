@@ -14,6 +14,10 @@ export class RoomService {
     return this.http.post("/api/rooms", room );
   }
 
+  public ifRoomExistsById(id: string): Observable<boolean>{
+    return this.http.get<boolean>("/api/rooms/id/"+id);
+  }
+
   public getAllRooms():Observable<RoomModel[]>{
     return this.http.get<RoomModel[]>("/api/rooms/list");
   }

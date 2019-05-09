@@ -29,6 +29,7 @@ import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {AuthInterceptorService} from "../../services/auth-interceptor.service";
 import {UserService} from "../../services/user.service";
 import {SharedModule} from "../shared/shared.module";
+import { BlogComponent } from './components/blog/blog.component';
 
 @NgModule({
   declarations: [FooterComponent, CarouselComponent, ServiceComponent, GalleryComponent, ResortComponent,
@@ -37,7 +38,8 @@ import {SharedModule} from "../shared/shared.module";
     FastbookviewComponent, BookroomcontentComponent, BookeventcontentComponent,
     BookconfcontentComponent,
     AddroomblankComponent,
-    AddeventblankComponent],
+    AddeventblankComponent,
+    BlogComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -65,7 +67,8 @@ import {SharedModule} from "../shared/shared.module";
     BookeventcontentComponent,
     BookconfcontentComponent,
     AddroomblankComponent,
-    AddeventblankComponent
+    AddeventblankComponent,
+    BlogComponent
   ],
   providers:[
     UserService,
