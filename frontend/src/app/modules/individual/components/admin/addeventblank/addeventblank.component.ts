@@ -22,4 +22,6 @@ export class AddeventblankComponent implements OnInit {
     this.roomService.postAllEvent(this.newEvent);
   }
 
+
+
 }

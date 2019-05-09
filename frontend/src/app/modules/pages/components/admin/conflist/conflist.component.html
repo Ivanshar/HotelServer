@@ -1,3 +1,43 @@
-<p>
-  conflist works!
-</p>
+<app-adminheader></app-adminheader>
+
+<section class="contact-block">
+  <div class="container">
+    <div class="list-group full-width-div  col-12 table-responsive">
+      <table class="table">
+        <tr>
+          <th><h2>#</h2></th>
+          <th><h2>Name</h2></th>
+          <th><h2>Max people</h2></th>
+          <th><h2>Start</h2></th>
+          <th><h2>Finish</h2></th>
+          <th><h2>Price</h2></th>
+        </tr>
+        <tr *ngFor="let event of events; let i = index">
+          <th>
+            <h5>{{i+1}}</h5>
+          </th>
+          <th>
+            <h5>{{event.name}}</h5>
+          </th>
+          <th>
+            <h5>{{event.maxPersons}}</h5>
+          </th>
+          <th>
+            <h5>{{event.dateTimeStart}}</h5>
+          </th>
+          <th>
+            <h5>{{event.dateTimeEnd}}</h5>
+          </th>
+          <th>
+            <h5>{{event.price}}</h5>
+          </th>
+        </tr>
+
+      </table>
+    </div>
+  </div>
+</section>
+
+
+
+<app-footer></app-footer>
