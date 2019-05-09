@@ -13,12 +13,6 @@ import {UserService} from "../../../../services/user.service";
 })
 export class RegistrblankComponent implements OnInit {
 
-
-  firstnameControl: FormControl;
-  secondnameControl: FormControl;
-  numberControl: FormControl;
-  passwordControl: FormControl;
-  dateControl: FormControl;
   emailControl: FormControl;
 
   public newUser: UserModel = new UserModel();
@@ -27,46 +21,46 @@ export class RegistrblankComponent implements OnInit {
   public userExistsByLogin: boolean = false;
   registerForm: FormGroup;
   submitted = false;
+  form: FormGroup;
 
   constructor(private userService: UserService,
               private router: Router,
               private auth: AuthService,
-              private formBuilder: FormBuilder) {
+              private formBuilder: FormBuilder) {  }
 
-  }
 
-  form: FormGroup;
 
   ngOnInit() {
-  //   this.form = this.formBuilder.group({
-  //   firstnameControl: ['', Validators.required],
-  //   secondnameControl :('', Validators.required),
-  //   numberControl:('', Validators.compose([Validators.required,Validators.min(9999999)])),
-  //   passwordControl :('', Validators.compose([Validators.required,Validators.minLength(8)])),
-  //   dateControl :(''),
-  //   emailControl :('', Validators.compose([
+    this.registerForm = this.formBuilder.group({
+    firstName: ['', Validators.required],
+    lastName : ['', Validators.required],
+    login : ['', Validators.required],
+    number:['', [Validators.required,Validators.minLength(7)]],
+    password :['', [Validators.required,Validators.minLength(6)]],
+    birthdate :['', Validators.required],
+    email :['', [Validators.required, Validators.email]],
+  });
+  //   this.firstnameControl = new FormControl('', Validators.required);
+  //   this.secondnameControl = new FormControl('', Validators.required);
+  //   this.numberControl = new FormControl('', Validators.compose([Validators.required,Validators.min(9999999)])) ;
+  //   this.passwordControl = new FormControl('', Validators.compose([Validators.required,Validators.minLength(8)]));
+  //   this.dateControl = new FormControl('');
+  //   this.emailControl = new FormControl('', Validators.compose([
   //     Validators.required,
-  //     Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')])),
-  // });
-    this.firstnameControl = new FormControl('', Validators.required);
-    this.secondnameControl = new FormControl('', Validators.required);
-    this.numberControl = new FormControl('', Validators.compose([Validators.required,Validators.min(9999999)])) ;
-    this.passwordControl = new FormControl('', Validators.compose([Validators.required,Validators.minLength(8)]));
-    this.dateControl = new FormControl('');
-    this.emailControl = new FormControl('', Validators.compose([
-      Validators.required,
-      Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-    ]));
+  //     Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+  //   ]));
   }
+
+  get f() { return this.registerForm.controls; }
 
   onSubmit() {
     this.submitted = true;
 
     // stop here if form is invalid
-    if (this.firstnameControl.invalid) {
+    if (this.registerForm.invalid) {
       return;
     }
-    console.log(this.firstnameControl);
+    console.log(this.registerForm);
 
   }
 
