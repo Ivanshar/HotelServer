@@ -2,47 +2,43 @@
 
 <section class="contact-block">
   <div class="container">
-    <h1>Список мероприятий</h1>
+    <h1>Черный список</h1>
     <div class="list-group full-width-div  col-12 table-responsive">
       <table class="table">
         <tr>
           <th><h2>#</h2></th>
           <th><h2>Имя</h2></th>
-          <th><h2>Максимальное количество человек</h2></th>
-          <th><h2>Тип</h2></th>
-          <th><h2>Начало</h2></th>
-          <th><h2>Конец</h2></th>
-          <th><h2>Цена</h2></th>
+          <th><h2>Фамилия</h2></th>
+          <th><h2>Email</h2></th>
+          <th><h2>Мобильный номер</h2></th>
+          <th><h2>Дата рождет</h2></th>
         </tr>
-        <tr *ngFor="let event of events; let i = index">
+        <tr *ngFor="let user of users; let i = index">
           <th>
             <h5>{{i+1}}</h5>
           </th>
           <th>
-            <h5>{{event.name}}</h5>
+            <h5>{{user.firstName}}</h5>
           </th>
           <th>
-            <h5>{{event.maxPersons}}</h5>
+            <h5>{{user.lastName}}</h5>
           </th>
           <th>
-            <h5>{{event.eventType}}</h5>
+            <h5>{{user.email}}</h5>
           </th>
           <th>
-            <h5>{{event.dateTimeStart}}</h5>
+            <h5>{{user.mobileNumber}}</h5>
           </th>
           <th>
-            <h5>{{event.dateTimeEnd}}</h5>
+            <h5>{{user.birthDate}}</h5>
           </th>
           <th>
-            <h5>{{event.price}}</h5>
+            <button class="btn danger">Убрать из ЧС</button>
           </th>
         </tr>
-
       </table>
     </div>
   </div>
 </section>
-
-
 
 <app-footer></app-footer>
