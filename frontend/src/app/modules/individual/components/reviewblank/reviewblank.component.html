@@ -5,8 +5,8 @@
       <form action="" method="post">
         <input type="text" [formControl]="nameControl" class="form-control inputtext" name="Name" placeholder="Name" required="">
         <input type="email" [formControl]="emailControl" class="form-control inputtext" name="Email" placeholder="Email" required="">
-        <textarea class="form-control" name="Message" placeholder="Review Here...." required=""></textarea>
-        <input type="submit" [formControl]="rewiewControl" class="submit-btn inputtext" value="Submit">
+        <textarea class="form-control" [formControl]="rewiewControl" name="Message" placeholder="Review Here...." required=""></textarea>
+        <input type="submit"  class="submit-btn inputtext" value="Submit">
       </form>
     </div>
     <div class="clearfix"></div>
