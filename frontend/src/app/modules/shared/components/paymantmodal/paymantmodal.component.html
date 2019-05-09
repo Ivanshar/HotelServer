@@ -3,19 +3,19 @@
     <div class="modal-content">
       <form class="px-4 py-3">
         <div class="row">
-          <label for="cardNum">Number on card</label>
+          <label for="cardNum">Номер карты</label>
           <input type="text" class="form-control" id="cardNum">
-          <div class="invalid-feedback">Number is required</div>
+          <div class="invalid-feedback">Определите номер</div>
         </div>
         <div class="row">
-          <label for="cardName">Name on card</label>
+          <label for="cardName">Имя владельца карты</label>
           <input type="text" class="form-control" id="cardName">
-          <small class="text-muted">Full name on your card</small>
-          <div class="invalid-feedback">Name is required</div>
+          <small class="text-muted">полное имя на карте</small>
+          <div class="invalid-feedback">Определите имя</div>
         </div>
         <div class="row">
           <div class="col p-0 mr-2">
-            <label for="cardExp">Expiration</label>
+            <label for="cardExp">Срок</label>
             <input type="text" class="form-control" id="cardExp">
           </div>
           <div class="col p-0 ml-2">
@@ -25,13 +25,13 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-5">
-            <label for="cardSum">Sum</label>
+            <label for="cardSum">Сумма</label>
             <input type="text" class="form-control" id="cardSum" disabled value="{{price}}">
           </div>
         </div>
         <div class="d-flex justify-content-between mr-0 mt-3">
-          <button type="submit" class="btn btn-primary col-2" (click)="makePayment()">Add</button>
-          <button type="button" class="btn btn-danger col-2" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary col-2" (click)="makePayment()">Подтвердить</button>
+          <button type="button" class="btn btn-danger col-2" data-dismiss="modal">закрыть</button>
         </div>
       </form>
     </div>

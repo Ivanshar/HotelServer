@@ -15,16 +15,17 @@
             <label for="roomNumber">№:  &nbsp; </label>
             <input type="number" class="form-control col-2" id="roomNumber" name="Number" placeholder="1" min="0" max="10000" [(ngModel)]="newRoom.number">
           </div>
-          <label for="child">Type of room</label>
-          <select id="child" class="form-control form-control-lg col-6" name="roomType" [(ngModel)]="newRoom.roomType">
-            <option>Classic Room</option>
-            <option>Classic Riverside View</option>
-            <option>Hospitality Suite</option>
-            <option>Luxury Suite</option>
-            <option>Presidential Suite</option>
+          <label for="child">Тип комнаты</label>
+          <select id="child" class="form-control form-control-lg col-7" name="roomType" [(ngModel)]="newRoom.roomType">
+            <option>Классический</option>
+            <option>Классический с видом на море</option>
+            <option>Люкс Hospitality</option>
+            <option>Люкс Premium</option>
+            <option>Роскошный люкс</option>
+            <option>Президентский люкс</option>
           </select>
           <div class="form-group">
-            <label for="inputNumPeople">Number of people</label>
+            <label for="inputNumPeople">Количество человек</label>
             <input type="number" class="form-control col-2" id="inputNumPeople" name="NumPeople" placeholder="1" min="0" max="10" [(ngModel)]="newRoom.maxPersons">
           </div>
           <div class="custom-control custom-radio">
@@ -33,28 +34,28 @@
           </div>
           <div class="custom-control custom-radio">
             <input type="checkbox" class="custom-control-input btn-danger" id="fridge" name="RadiosFridge" [(ngModel)]="hasFridge" value="false">
-            <label class="custom-control-label" for="fridge">Fridge</label>
+            <label class="custom-control-label" for="fridge">Холодильник</label>
           </div>
           <div class="custom-control custom-radio">
             <input type="checkbox" class="custom-control-input btn-danger" id="babyBad" name="RadiosBad" [(ngModel)]="hasBabyBed" value="false">
-            <label class="custom-control-label" for="babyBad">Baby bad</label>
+            <label class="custom-control-label" for="babyBad">Детская кровать</label>
           </div>
           <div class="custom-control custom-radio">
             <input type="checkbox" class="custom-control-input btn-danger" id="bath" name="Bath" [(ngModel)]="hasBath" value="false">
-            <label class="custom-control-label" for="bath">Bath</label>
+            <label class="custom-control-label" for="bath">Ванная</label>
           </div>
           <div class="form-group input-price">
-            <label for="inputPriceOfRoom">Price:  &nbsp; </label>
+            <label for="inputPriceOfRoom">Цена:  &nbsp; </label>
             <input type="number" class="form-control col-2" id="inputPriceOfRoom" name="Price" placeholder="1" min="0" max="10000" [(ngModel)]="newRoom.price">
             <h3>&nbsp; $</h3>
           </div>
           <div class="custom-control custom-radio" style="padding-top: 20px">
             <input type="checkbox" class="custom-control-input btn-danger" id="active" name="Active" [(ngModel)]="isActive" value="false">
-            <label class="custom-control-label" for="active">ACTIVE</label>
+            <label class="custom-control-label" for="active">АКТИВНЫЙ</label>
           </div>
 
           <div class="text-center mx-auto" style="padding: 20px">
-            <button type="submit" class=" btn btn-block mybtn btn-danger tx-tfm">Commit</button>
+            <button type="submit" class=" btn btn-block mybtn btn-danger tx-tfm">Подтвердить</button>
           </div>
         </form>
       </div>

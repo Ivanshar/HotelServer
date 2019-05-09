@@ -5,23 +5,23 @@
         <section class="image-head-wrapper"
                  style="background-image: url('../../../../../assets/images/userid.jpg');">
           <div class="inner-wrapper">
-            <h1>Profile</h1>
+            <h1>Профиль</h1>
           </div>
         </section>
       </div>
       <div class="userinfo col-sm">
         <form action="" method="post" name="registration" class="regblank" *ngIf="loaded">
           <h1 style="color: #ff4157; font-size: 40px">{{userInfo.firstName}} {{userInfo.lastName}}</h1>
-          <h3 class="regblank">Email address:</h3>
+          <h3 class="regblank">Email:</h3>
           <h2 class="regblank">{{userInfo.email}}</h2>
-          <h3 class="regblank">Birth Date:</h3>
+          <h3 class="regblank">Дата рождения:</h3>
           <h2 class="regblank">{{userInfo.birthDate}}</h2>
-          <h3 class="regblank">Mobile number:</h3>
+          <h3 class="regblank">Мобильный номер:</h3>
           <h2 class="regblank">+{{userInfo.mobileNumber}}</h2>
         </form>
       </div>
       <div class="col-md-2  col-sm-4 col-xs-12 edit-position position-absolute">
-        <div class="text-right"><button type="button" class="book-now-btn" data-toggle="modal"><a routerLink="/reductprof">Edit</a></button></div>
+        <div class="text-right"><button type="button" class="book-now-btn" data-toggle="modal"><a routerLink="/reductprof">Редактировать</a></button></div>
       </div>
     </div>
   </div>
