@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { FormControl } from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import { Validators } from '@angular/forms';
 import {UserModel} from "../../../../models/user-model";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -25,14 +25,29 @@ export class RegistrblankComponent implements OnInit {
   @Input() public isAdmin: boolean = false;
   public userExistsByEmail: boolean = false;
   public userExistsByLogin: boolean = false;
+  registerForm: FormGroup;
+  submitted = false;
 
   constructor(private userService: UserService,
               private router: Router,
-              private auth: AuthService) {
+              private auth: AuthService,
+              private formBuilder: FormBuilder) {
 
   }
 
+  form: FormGroup;
+
   ngOnInit() {
+  //   this.form = this.formBuilder.group({
+  //   firstnameControl: ['', Validators.required],
+  //   secondnameControl :('', Validators.required),
+  //   numberControl:('', Validators.compose([Validators.required,Validators.min(9999999)])),
+  //   passwordControl :('', Validators.compose([Validators.required,Validators.minLength(8)])),
+  //   dateControl :(''),
+  //   emailControl :('', Validators.compose([
+  //     Validators.required,
+  //     Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')])),
+  // });
     this.firstnameControl = new FormControl('', Validators.required);
     this.secondnameControl = new FormControl('', Validators.required);
     this.numberControl = new FormControl('', Validators.compose([Validators.required,Validators.min(9999999)])) ;
@@ -42,6 +57,17 @@ export class RegistrblankComponent implements OnInit {
       Validators.required,
       Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
     ]));
+  }
+
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.firstnameControl.invalid) {
+      return;
+    }
+    console.log(this.firstnameControl);
+
   }
 
   public regNewUser():void{
