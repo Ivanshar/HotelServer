@@ -29,10 +29,10 @@
           </div>
           <h5>Login</h5>
           <div class="input-group-prepend">
-            <input type="text" name="email" class="form-control" id="login" aria-describedby="emailHelp"
-                   placeholder="login" (focusout)="ifExistsByLogin(login.value)"
+            <input type="text" name="login" class="form-control" id="login" aria-describedby="emailHelp"
+                   placeholder="login" (focusout)="ifExistsByLogin()"
                    [(ngModel)]="newUser.login" autocomplete="off"  formControlName="login"
-                   [ngClass]="{ 'is-invalid': submitted && f.email.errors }" formControlName="login">
+                   [ngClass]="{ 'is-invalid': submitted && f.email.errors }" >
             <small *ngIf="userExistsByLogin" class="text-danger">This login is already exists</small>
             <div *ngIf="submitted && f.login.errors" class="invalid-feedback">
               <div *ngIf="f.login.errors.required">Login is required</div>
@@ -41,7 +41,7 @@
           <h5>Email address</h5>
           <div class="input-group-prepend">
             <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp"
-                   (focusout)="ifExistsByEmail(emailControl.value)" [(ngModel)]="newUser.email"
+                   (focusout)="ifExistsByEmail()" [(ngModel)]="newUser.email"
                    placeholder="email@email.com" autocomplete="off" (change)="userExistsByEmail = false"
                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }" formControlName="email">
             <small *ngIf="userExistsByEmail" class="text-danger">This email is already exists</small>

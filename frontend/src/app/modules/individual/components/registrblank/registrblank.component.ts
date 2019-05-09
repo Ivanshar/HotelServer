@@ -60,7 +60,8 @@ export class RegistrblankComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     }
-    console.log(this.registerForm);
+
+    this.regNewUser();
 
   }
 
@@ -76,16 +77,16 @@ export class RegistrblankComponent implements OnInit {
     }
   }
 
-  public ifExistsByEmail(email: string):void{
-    if(email != undefined) this.userService.findUserByEmail(email).subscribe((exists)=>{
+  public ifExistsByEmail():void{
+    if(this.newUser.email != null) this.userService.findUserByEmail(this.newUser.email).subscribe((exists)=>{
       if(exists) {
         this.userExistsByEmail = true;
       }
     });
   }
 
-  public ifExistsByLogin(login: string):void{
-    if(login != undefined) this.userService.findUserByLogin(login).subscribe((exists)=>{
+  public ifExistsByLogin():void{
+    if(this.newUser.login != null) this.userService.findUserByLogin(this.newUser.login).subscribe((exists)=>{
       if(exists) {
         this.userExistsByLogin = true;
       }
