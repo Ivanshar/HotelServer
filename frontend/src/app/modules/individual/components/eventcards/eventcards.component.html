@@ -1,28 +1,30 @@
+<div *ngFor="let event of events; let i = index">
 <div class="card text-center">
   <div class="card-header">
-    <img src="../../../../../assets/images/pinpong.jpg"  alt="..." >
+    <img src={{event.logoUrl}}  alt="..." >
   </div>
   <div class="card-body">
-    <h5 class="card-title">Pin-pong</h5>
-    <p class="card-text">pip pong competition for best matherfuckers.</p>
+    <h5 class="card-title">{{event.name}}</h5>
+    <p class="card-text">{{event.description}}</p>
     <button class="btn-lg  btn-danger"  data-toggle="modal" data-target="#toUpModal">Go to event</button>
   </div>
   <div class="card-footer text-muted">
-    2 days ago
+    {{event.dateTimeStart - event.dateTimeEnd}}
   </div>
+</div>
 </div>
 
-<div class="card text-center">
-  <div class="card-header">
-    <img src="../../../../../assets/images/javaevent.jpg"  alt="..." >
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">java meetup</h5>
-    <p class="card-text">java meet up for bsuir students.</p>
-    <a routerLink="/eventbook" class="btn-lg btn-danger">Go to event</a>
-  </div>
-  <div class="card-footer text-muted">
-    2 days ago
-  </div>
-</div>
+<!--<div class="card text-center">-->
+  <!--<div class="card-header">-->
+    <!--<img src="../../../../../assets/images/javaevent.jpg"  alt="..." >-->
+  <!--</div>-->
+  <!--<div class="card-body">-->
+    <!--<h5 class="card-title">java meetup</h5>-->
+    <!--<p class="card-text">java meet up for bsuir students.</p>-->
+    <!--<a routerLink="/eventbook" class="btn-lg btn-danger">Go to event</a>-->
+  <!--</div>-->
+  <!--<div class="card-footer text-muted">-->
+    <!--2 days ago-->
+  <!--</div>-->
+<!--</div>-->
 
